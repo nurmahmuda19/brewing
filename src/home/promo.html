@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brewing Bliss - Promo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="relative bg-cover bg-center text-white shadow-md py-12" style="background-image: url('https://i.pinimg.com/736x/da/77/87/da7787a98a3d569869133782327dbd6d.jpg')">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl font-bold">Promo Spesial Brewing Bliss</h1>
+      <p class="text-lg mt-2">Temukan promo spesial kopi terbaik kami di sini!</p>
+    </div>
+  </header>
+
+  <!-- Promo Details Section -->
+  <main class="container mx-auto py-10 px-4">
+    <section class="bg-white shadow-md rounded-lg p-6 mb-10">
+      <h2 id="voucher-info" class="text-xl font-semibold mb-4">Promo Details</h2>
+      <p id="voucher-description" class="text-gray-700">Menunggu detail promo...</p>
+    </section>
+
+    <!-- Promo Products -->
+    <section id="promo-products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Produk akan ditambahkan melalui JavaScript -->
+    </section>
+  </main>
+
+  <script>
+    // Fungsi untuk mendapatkan detail promo dari URL
+    function getPromoDetails() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const promoType = urlParams.get('type');
+
+      const voucherInfo = document.getElementById('voucher-info');
+      const promoProducts = document.getElementById('promo-products');
+      promoProducts.innerHTML = ''; // Bersihkan produk sebelumnya
+
+      // Periksa jenis promo
+      if (promoType === 'discount50') {
+        voucherInfo.textContent = 'Promo: Diskon 50% untuk pembelian kopi kedua!';
+        showSecondItemDiscount();
+      } else if (promoType === 'discount55k') {
+        voucherInfo.textContent = 'Promo: Diskon hingga Rp55.000!';
+        showDiscountUpTo55k();
+      } else if (promoType === 'buy1get1') {
+        voucherInfo.textContent = 'Promo: Buy 1 Get 1 Gratis!';
+        showBuy1Get1Products();
+      } else {
+        voucherInfo.textContent = 'Promo tidak ditemukan.';
+        promoProducts.innerHTML = '<p class="text-gray-700 col-span-full">Promo yang Anda cari tidak tersedia.</p>';
+      }
+    }
+
+    // Fungsi untuk menampilkan promo diskon 50%
+    function showSecondItemDiscount() {
+      const products = [
+        { name: 'Kopi Latte', price: 30000, image: 'https://via.placeholder.com/150?text=Kopi+Latte' },
+        { name: 'Americano', price: 25000, image: 'https://via.placeholder.com/150?text=Americano' },
+        { name: 'Espresso', price: 20000, image: 'https://via.placeholder.com/150?text=Espresso' },
+      ];
+
+      const promoProducts = document.getElementById('promo-products');
+      promoProducts.innerHTML = products.map((product) => `
+        <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow">
+          <img src="${product.image}" alt="${product.name}" class="w-full h-32 object-cover mb-4 rounded">
+          <h3 class="text-lg font-semibold mb-2 text-center">${product.name}</h3>
+          <p class="text-gray-700 text-sm text-center">Harga: Rp${product.price.toLocaleString()}</p>
+          <p class="text-blue-500 font-bold text-sm text-center mb-4">Harga setelah diskon 50%: Rp${(product.price / 2).toLocaleString()}</p>
+          <div class="text-center">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+              onclick='orderProduct("${product.name}", ${(product.price / 2)})'>
+              Order
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Fungsi untuk menampilkan promo diskon hingga Rp55.000
+    function showDiscountUpTo55k() {
+      const products = [
+        { name: 'Kopi Latte', price: 100000, image: 'latte.jpeg' },
+        { name: 'Cappuccino', price: 80000, image: 'capucino.jpg' },
+        { name: 'Americano', price: 60000, image: 'americano.jpg' },
+      ];
+
+      const promoProducts = document.getElementById('promo-products');
+      promoProducts.innerHTML = products.map(product => `
+        <div class="bg-white shadow-lg rounded-lg p-4 hover:shadow-md transition-shadow max-w-sm mx-auto">
+        <img src="${product.image}" alt="${product.name}" class="w-full h-80 object-cover mb-4 rounded">
+        <h3 class="text-lg font-semibold mb-2 text-center">${product.name}</h3>
+        <p class="text-gray-700 text-sm text-center">Harga: Rp${product.price.toLocaleString()}</p>
+        <p class="text-blue-500 font-bold text-sm text-center mb-4">Harga setelah diskon hingga Rp 55.000 : Rp${Math.max(product.price - 55000, 0).toLocaleString()}</p>
+        <div class="text-center">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+            onclick='orderProduct("${product.name}", ${Math.max(product.price - 55000, 0)})'>
+            Order
+            </button>
+        </div>
+        </div>
+      `).join('');
+    }
+
+    // Fungsi untuk menampilkan promo Buy 1 Get 1
+    function showBuy1Get1Products() {
+      const products = [
+        { buy: 'Kopi Latte', free: 'Cappuccino', image: 'https://via.placeholder.com/150?text=Kopi+Latte' },
+        { buy: 'Americano', free: 'Espresso', image: 'https://via.placeholder.com/150?text=Americano' },
+        { buy: 'Kopi Susu', free: 'Macchiato', image: 'https://via.placeholder.com/150?text=Kopi+Susu' },
+      ];
+
+      const promoProducts = document.getElementById('promo-products');
+      promoProducts.innerHTML = products.map(product => `
+        <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow">
+          <img src="${product.image}" alt="${product.buy}" class="w-full h-32 object-cover mb-4 rounded">
+          <h3 class="text-lg font-semibold mb-2 text-center">${product.buy}</h3>
+          <p class="text-gray-700 text-sm text-center">Beli produk ini dan dapatkan <strong>${product.free}</strong> secara gratis!</p>
+          <div class="text-center">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+              onclick='orderBuy1Get1("${product.buy}", "${product.free}")'>
+              Order
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Fungsi untuk memesan produk
+    function orderProduct(product, price) {
+      alert(`Anda memesan ${product} dengan harga Rp${price.toLocaleString()}`);
+    }
+
+    // Fungsi untuk promo Buy 1 Get 1
+    function orderBuy1Get1(buy, free) {
+      alert(`Anda memesan ${buy} dan mendapatkan ${free} secara gratis!`);
+    }
+
+    // Jalankan fungsi saat halaman dimuat
+    window.onload = getPromoDetails;
+  </script>
+</body>
+
+</html>

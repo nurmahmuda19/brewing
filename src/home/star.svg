@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" id="star">
+  <path d="M22,10.1c0.1-0.5-0.3-1.1-0.8-1.1l-5.7-0.8L12.9,3c-0.1-0.2-0.2-0.3-0.4-0.4C12,2.3,11.4,2.5,11.1,3L8.6,8.2L2.9,9
+	C2.6,9,2.4,9.1,2.3,9.3c-0.4,0.4-0.4,1,0,1.4l4.1,4l-1,5.7c0,0.2,0,0.4,0.1,0.6c0.3,0.5,0.9,0.7,1.4,0.4l5.1-2.7l5.1,2.7
+	c0.1,0.1,0.3,0.1,0.5,0.1l0,0c0.1,0,0.1,0,0.2,0c0.5-0.1,0.9-0.6,0.8-1.2l-1-5.7l4.1-4C21.9,10.5,22,10.3,22,10.1z"></path>
+</svg>
+
+<div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+  <!-- Product Image -->
+  <div class="relative">
+    <img src="coffee.jpg" alt="The Nutcracker Ground Coffee" class="w-full h-64 object-cover">
+    <div class="absolute top-2 left-2 bg-black bg-opacity-50 text-white p-2 rounded">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.717 5.29h5.557c.969 0 1.371 1.24.588 1.81l-4.5 3.28 1.717 5.29c.3.921-.755 1.688-1.538 1.11L10 14.348l-4.5 3.29c-.783.578-1.838-.189-1.538-1.11l1.717-5.29-4.5-3.28c-.783-.57-.381-1.81.588-1.81h5.557l1.717-5.29z" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Product Info -->
+  <div class="p-6">
+    <h2 class="text-lg font-semibold mb-1">The Nutcracker Ground Coffee</h2>
+    <p class="text-gray-600 text-sm mb-2">£10.25 <span class="text-gray-400">(29p per cup)</span></p>
+    <p class="text-sm text-gray-500 mb-2">Limited Edition Festive Blend</p>
+    <p class="text-sm text-gray-600 mb-4">Festive spice, toffee & dried fruits</p>
+
+    <!-- Product Details -->
+    <div class="text-sm text-gray-600 space-y-2">
+      <p>Suitable for: <span class="inline-flex space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M6 2a1 1 0 00-.867.5L2 8v8a2 2 0 002 2h12a2 2 0 002-2V8l-3.133-5.5A1 1 0 0014 2H6z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M6 2a1 1 0 00-.867.5L2 8v8a2 2 0 002 2h12a2 2 0 002-2V8l-3.133-5.5A1 1 0 0014 2H6z" />
+        </svg>
+      </span></p>
+      <p>Type: Ground 240g</p>
+      <p>Strength: 
+        <span class="flex items-center">
+          <span class="flex space-x-1">
+            <!-- Strength Bars -->
+            <div class="w-2 h-4 bg-black"></div>
+            <div class="w-2 h-4 bg-black"></div>
+            <div class="w-2 h-4 bg-black"></div>
+            <div class="w-2 h-4 bg-black"></div>
+            <div class="w-2 h-4 bg-black"></div>
+            <div class="w-2 h-4 bg-black"></div>
+            <div class="w-2 h-4 bg-black"></div>
+            <div class="w-2 h-4 bg-black"></div>
+            <div class="w-2 h-4 bg-gray-300"></div>
+            <div class="w-2 h-4 bg-gray-300"></div>
+          </span>
+        </span>
+      </p>
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex space-x-2 mt-4">
+      <button class="flex-grow bg-gray-200 text-gray-800 py-2 px-4 rounded hover:bg-gray-300">
+        See Details
+      </button>
+      <button class="flex-grow bg-yellow-400 text-white py-2 px-4 rounded hover:bg-yellow-500">
+        Add to Basket
+      </button>
+    </div>
+  </div>
+</div>

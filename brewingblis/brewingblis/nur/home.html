@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brewing Bliss</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white shadow-md">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <div class="text-2xl font-bold cursor-pointer" id="logo">Brewing Bliss</div>
+      <nav class="space-x-6">
+        <a href="#Home" class="hover:text-gray-200">Home</a>
+        <a href="#Menu" class="hover:text-gray-200">Menu</a>
+        <a href="#Coffee Shop" class="hover:text-gray-200">Promo</a>
+        <a href="#About" class="hover:text-gray-200">Keranjang</a>
+        <a href="#Help" class="hover:text-gray-200">Keranjang</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Search Bar -->
+  <div class="container mx-auto mt-6 px-6">
+    <div class="relative bg-white border rounded-lg p-4">
+      <input type="text" id="searchBar" placeholder="Search Coffee Shop" 
+        class="w-full border-none outline-none text-lg p-2" oninput="filterCoffeeShop()">
+      <i class="absolute top-3 right-3 text-gray-500">🔍</i>
+    </div>
+  </div>
+
+  <!-- Rekomendasi Section -->
+  <section id="Rekomendasi" class="container mx-auto mt-10 px-6">
+    <h2 class="text-2xl font-semibold mb-4">Rekomendasi</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white shadow rounded-lg p-4 text-center transition hover:shadow-lg hover:bg-gray-100">
+        <img src="/BrewingBliss/assetsnur/starbuck.jpeg" alt="Café Serene" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h3 class="text-lg font-bold">Café Serene</h3>
+        <p class="text-gray-600">Menghadirkan ketenangan dan kenyamanan dalam suasana yang elegan.</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center transition hover:shadow-lg hover:bg-gray-100">
+        <img src="/BrewingBliss/assetsnur/coffeshop2.webp" alt="Pastel Palette" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h3 class="text-lg font-bold">Pastel Palette</h3>
+        <p class="text-gray-600">Menyuguhkan suasana lembut dengan warna-warna pastel yang menenangkan.</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center transition hover:shadow-lg hover:bg-gray-100">
+        <img src="/BrewingBliss/assetsnur/coffeshop3.jpeg" alt="Velvet & Vibes" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h3 class="text-lg font-bold">Velvet & Vibes</h3>
+        <p class="text-gray-600">Kombinasi kemewahan dan getaran positif untuk pengalaman ngopi yang istimewa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promo Section -->
+  <section id="Promo" class="container mx-auto mt-10 px-6">
+    <h2 class="text-2xl font-semibold mb-4">Diskon dan Promo</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white shadow rounded-lg p-4 text-center transition hover:shadow-lg hover:bg-gray-100">
+        <img src="/BrewingBliss/assetsnur/coffeshop4.jpeg" alt="Starbucks" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h3 class="text-lg font-bold">Starbucks</h3>
+        <p class="text-gray-600">Berbagai kopi dan non kopi</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center transition hover:shadow-lg hover:bg-gray-100">
+        <img src="/BrewingBliss/assetsnur/coffeshop5.png" alt="Janji Jiwa" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h3 class="text-lg font-bold">Janji Jiwa</h3>
+        <p class="text-gray-600">Berbagai kopi dan non kopi.</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center transition hover:shadow-lg hover:bg-gray-100">
+        <img src="/BrewingBliss/assetsnur/coffeshop6.webp" alt="Kenangan Mantan" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h3 class="text-lg font-bold">Kenangan Mantan</h3>
+        <p class="text-gray-600">Berbagai kopi dan non kopi.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produk Promo Section -->
+  <section id="Produk" class="container mx-auto mt-10 px-6">
+    <h2 class="text-2xl font-semibold mb-4">Produk Promo</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div class="bg-white shadow rounded-lg p-4 text-center transition hover:shadow-lg hover:bg-gray-100">
+        <img src="/BrewingBliss/assetsnur/kopi1.jpeg" alt="Produk 1" class="w-full h-36 object-cover rounded-lg mb-4">
+        <div class="font-bold">Produk 1</div>
+        <div class="text-gray-600">Rp100.000</div>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center transition hover:shadow-lg hover:bg-gray-100">
+        <img src="/BrewingBliss/assetsnur/kopi2.jpeg" alt="Produk 2" class="w-full h-36 object-cover rounded-lg mb-4">
+        <div class="font-bold">Produk 2</div>
+        <div class="text-gray-600">Rp70.000</div>
+      </div>
+      <!-- Add other products as required -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white mt-10">
+    <div class="container mx-auto py-4 text-center">
+      ©️ 2024 Brewing Bliss
+    </div>
+  </footer>
+
+  <script>
+    // Logo click notification
+    document.getElementById("logo").addEventListener("click", function () {
+      alert("Selamat datang di Brewing Bliss!");
+    });
+  </script>
+
+</body>
+
+</html>

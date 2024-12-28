@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brewing Bliss</title>
+  <!-- Tailwind CSS & Flowbite -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite/dist/flowbite.min.js"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
+
+  <!-- Loading Screen -->
+  <div id="loadingScreen"
+    class="fixed inset-0 flex items-center justify-center bg-brown-700 z-50 transition-opacity opacity-100">
+    <div class="w-10 h-10 border-4 border-white border-t-brown-700 rounded-full animate-spin"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="relative bg-cover bg-center text-white shadow-md py-12"
+    style="background-image: url('https://i.pinimg.com/736x/da/77/87/da7787a98a3d569869133782327dbd6d.jpg')">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="relative z-10 container mx-auto flex justify-between items-center px-6">
+      <!-- Logo -->
+      <div class="text-2xl font-bold cursor-pointer" id="logo">Brewing Bliss</div>
+      <!-- Navigation Menu -->
+      <nav class="hidden md:flex space-x-6">
+        <a href="home.html" class="hover:text-gray-200">Home</a>
+        <a href="rekomendasi.html" class="hover:text-gray-200">Coffee Shop</a>
+        <a href="#About" class="hover:text-gray-200">About</a>
+        <a href="#Help" class="hover:text-gray-200">Help</a>
+      </nav>
+      <!-- Mobile Menu Button -->
+      <button id="menuButton" class="md:hidden hover:text-gray-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+    <!-- Hero Content -->
+    <div class="relative z-10 text-center mt-6">
+      <h1 class="text-4xl md:text-5xl font-bold">Dibuat dengan Sempurna</h1>
+      <p class="text-lg md:text-xl mt-2">Dari pemenang rasa terbaik hingga favorit para ahli, kami memiliki kopi yang
+        tepat untuk Anda.</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 container mx-auto mt-10 px-6">
+
+    <!-- Search Bar -->
+    <div class="relative bg-white border rounded-lg p-4 mb-8">
+      <input type="text" id="searchBar" placeholder="Search Coffee Shop"
+        class="w-full border-none outline-none text-lg p-2" oninput="filterCoffeeShops()">
+    </div>
+
+    <!-- Modal for Cards -->
+    <div id="cardBackdrop" class="fixed inset-0 bg-black bg-opacity-50 hidden"></div>
+    <div id="cardModal"
+      class="z-30 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg rounded-lg p-6 w-11/12 max-w-md hidden">
+      <button id="closeCard" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">✖</button>
+      <h2 id="cardTitle" class="text-2xl font-bold mb-4"></h2>
+      <p id="cardDescription" class="text-gray-600 mb-4"></p>
+      <img id="cardImage" src="" alt="" class="w-full rounded-lg">
+    </div>
+
+    <!-- Recommendations Section -->
+    <section class="space-y-10 mb-10">
+      <div class="flex justify-between items-center">
+        <h2 class="text-2xl font-semibold">Rekomendasi</h2>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div onclick="openCard('Cafe Serene', 'Menghadirkan ketenangan dan kenyamanan dalam suasana yang elegan.', 'starbuck.jpeg')"
+          class="bg-white shadow rounded-lg p-4 text-center transition hover:shadow-lg hover:bg-blue-100 cursor-pointer">
+          <img src="starbuck.jpeg" alt="Cafe Serene" class="w-36 h-36 mx-auto rounded-lg mb-4">
+          <h3 class="text-lg font-bold">Cafe Serene</h3>
+          <p class="text-gray-600">Menghadirkan ketenangan dan kenyamanan dalam suasana yang elegan.</p>
+        </div>
+        <!-- card 2 -->
+        <div onclick="openCard('Pastel Palette', 'Menyuguhkan suasana lembut dengan warna-warna pastel.', 'coffeshop2.webp')"
+          class="bg-white shadow rounded-lg p-4 text-center hover:shadow-lg hover:bg-blue-100 cursor-pointer">
+          <img src="coffeshop2.webp" alt="Pastel Palette" class="w-36 h-36 mx-auto rounded-lg mb-4">
+          <h3 class="text-lg font-bold">Pastel Palette</h3>
+          <p class="text-gray-600">Menyuguhkan suasana lembut dengan warna-warna pastel.</p>
+        </div>
+        <!-- Card 3 -->
+        <div onclick="openCard('Velvet & Vibes', 'Kombinasi kemewahan dan getaran positif untuk pengalaman ngopi yang istimewa.', 'coffeshop3.jpeg')"
+        class="bg-white shadow rounded-lg p-4 text-center transition hover:shadow-lg hover:bg-blue-100 cursor-pointer">
+          <img src="coffeshop3.jpeg" alt="Velvet & Vibes" class="w-36 h-36 mx-auto rounded-lg mb-4">
+          <h3 class="text-lg font-bold">Velvet & Vibes</h3>
+          <p class="text-gray-600">Kombinasi kemewahan dan getaran positif untuk pengalaman ngopi yang istimewa.</p>
+        </div>
+        <!-- card 4 -->
+        <div onclick="openCard('Espresso Lane', 'Pilihan pastry yang enak dipadukan dengan kopi yang mantap. Sangat memuaskan.', 'cafe.jpg')"
+        class="bg-white shadow rounded-lg p-4 text-center hover:shadow-lg hover:bg-blue-100 cursor-pointer">
+          <img src="cafe.jpg" alt="Espresso Lane" class="w-36 h-36 mx-auto rounded-lg mb-4">
+          <h3 class="text-lg font-bold mt-4">Espresso Lane</h3>
+        <p class="text-gray-600">Pilihan pastry yang enak dipadukan dengan kopi yang mantap. Sangat memuaskan.</p>
+        </div>
+        <!-- Card 5 -->
+        <div onclick="openCard('Cikole Coffee', 'Tempat yang nyaman dengan kopi yang nikmat. Sangat direkomendasikan untuk pecinta kopi.', 'cikole.jpg')"
+        class="bg-white shadow rounded-lg p-4 text-center transition hover:shadow-lg hover:bg-blue-100 cursor-pointer">
+          <img src="cikole.jpg" alt="Cikole Cafe" class="w-36 h-36 mx-auto rounded-lg mb-4">
+          <h3 class="text-lg font-bold mt-4">Cikole Coffee</h3>
+        <p class="text-gray-600">Tempat yang nyaman dengan kopi yang nikmat. Sangat direkomendasikan untuk pecinta kopi.</p>
+        </div>
+        <!-- card 6 -->
+        <div onclick="openCard('Eighten Cafe', 'Pelayanan ramah dan pilihan menu kopi yang beragam. Cocok untuk hangout bersama teman.', 'eighten.jpg')"
+        class="bg-white shadow rounded-lg p-4 text-center hover:shadow-lg hover:bg-blue-100 cursor-pointer">
+          <img src="eighten.jpg" alt="Eighten cafe" class="w-36 h-36 mx-auto rounded-lg mb-4">
+          <h3 class="text-lg font-bold">Eighten Cafe</h3>
+        <p class="text-gray-600">Pelayanan ramah dan pilihan menu kopi yang beragam. Cocok untuk hangout bersama teman.</p>
+        </div>
+        <!-- Card 7 -->
+        <div onclick="openCard('Golden Pine', 'Kualitas kopi yang konsisten dan suasana yang tenang. Tempat favorit untuk bekerja.', 'golden.jpg')"
+        class="bg-white shadow rounded-lg p-4 text-center transition hover:shadow-lg hover:bg-blue-100 cursor-pointer">
+          <img src="golden.jpg" alt="Golden Pine" class="w-36 h-36 mx-auto rounded-lg mb-4">
+          <h3 class="text-lg font-bold">Golden Pine</h3>
+        <p class="text-gray-600">Kualitas kopi yang konsisten dan suasana yang tenang. Tempat favorit untuk bekerja.</p>
+        </div>
+        <!-- card 8 -->
+        <div onclick="openCard('Kisah Manis', 'Dekorasi interior yang modern dan rasa kopi yang luar biasa. Pasti akan kembali lagi.', 'kisah.jpeg')"
+        class="bg-white shadow rounded-lg p-4 text-center hover:shadow-lg hover:bg-blue-100 cursor-pointer">
+        <img src="kisah.jpeg" alt="Kisah Manis" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h3 class="text-lg font-bold">Kisah Manis</h3>
+        <p class="text-gray-600">Dekorasi interior yang modern dan rasa kopi yang luar biasa. Pasti akan kembali lagi.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-white py-4" style="background-color: #8B4513;">
+    <div class="container mx-auto text-center">©️ 2024 Brewing Bliss</div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    window.onload = () => {
+      document.getElementById('loadingScreen').classList.add('hidden');
+    };
+
+    function openCard(title, description, imageSrc) {
+      document.getElementById('cardTitle').textContent = title;
+      document.getElementById('cardDescription').textContent = description;
+      document.getElementById('cardImage').src = imageSrc;
+      document.getElementById('cardModal').classList.remove('hidden');
+      document.getElementById('cardBackdrop').classList.remove('hidden');
+    }
+
+    document.getElementById('closeCard').onclick = () => {
+      document.getElementById('cardModal').classList.add('hidden');
+      document.getElementById('cardBackdrop').classList.add('hidden');
+    };
+
+    document.getElementById('cardBackdrop').onclick = () => {
+      document.getElementById('cardModal').classList.add('hidden');
+      document.getElementById('cardBackdrop').classList.add('hidden');
+    };
+  </script>
+
+</body>
+
+</html>

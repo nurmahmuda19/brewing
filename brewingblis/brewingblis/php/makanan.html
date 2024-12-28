@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minuman - Brewing Bliss</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header style="background-color: #8B4513;" class="text-white shadow-md">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <!-- Logo -->
+      <div class="text-2xl font-bold cursor-pointer" id="logo">Brewing Bliss</div>
+
+      <!-- Navigation -->
+      <nav class="space-x-6 flex items-center">
+        <a href="homi.html" class="hover:text-gray-200">Home</a>
+        <a href="menu.html" class="hover:text-gray-200">Menu</a>
+        <a href="rekomendasi.html" class="hover:text-gray-200">Coffee Shop</a>
+        <a href="#About" class="hover:text-gray-200">About</a>
+        <a href="#Help" class="hover:text-gray-200">Help</a>
+      </nav>
+
+      <!-- Filter Dropdown -->
+      <div>
+        <select id="categoryFilter" class="bg-white text-black p-2 rounded-md" onchange="filterByCategory()">
+          <option value="all">All</option>
+          <option value="coffee">Coffee</option>
+          <option value="non-coffee">Non-Coffee</option>
+          <option value="milkshake">Milkshake</option>
+          <option value="jus">Jus</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- Search Bar and Back Button -->
+  <div class="container mx-auto mt-6 px-6 flex items-center space-x-4">
+    <!-- Back Button -->
+    <button onclick="window.history.back()" class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">
+      Back
+    </button>
+
+    <!-- Search Bar -->
+    <div class="relative bg-white border rounded-lg p-4 flex-grow">
+      <input type="text" id="searchBar" placeholder="Search Menu" class="w-full border-none outline-none text-lg p-2" oninput="filterMenu()">
+    </div>
+  </div>
+
+  <!-- Minuman Section -->
+  <main class="container mx-auto mt-10 px-6">
+    <h1 class="text-3xl font-bold mb-6">Minuman</h1>
+    <div class="minuman grid grid-cols-3 gap-6">
+        <div class="menu-item text-center bg-white shadow rounded-lg p-4">
+          <img src="/BrewingBliss/assetsnur/espresso.jpg" alt="Espresso Coffee" class="w-36 h-36 mx-auto rounded-lg mb-4">
+          <h3 class="font-bold text-xl">Espresso Coffee</h3>
+          <p class="text-gray-500">Rp 25.000</p>
+          <button onclick="addOrder('Espresso Coffee', 'espresso.jpg', 25000)" 
+            class="mt-2 bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700">
+            Pesan
+          </button>
+        </div>
+        <div class="menu-item text-center bg-white shadow rounded-lg p-4" data-category="coffee" data-name="latte">
+            <img src="/BrewingBliss/assetsnur/latte.jpg" alt="Espresso Coffee" class="w-36 h-36 mx-auto rounded-lg mb-4">
+            <h3 class="font-bold text-xl">Latte Coffee</h3>
+            <p class="text-gray-500">Rp 25.000</p>
+            <button onclick="addOrder('Latte Coffee', 'latte.jpg', 25000)" 
+              class="mt-2 bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700">
+              Pesan
+            </button>
+          </div>
+          <div class="menu-item text-center bg-white shadow rounded-lg p-4" data-category="coffee" data-name="dalgona coffee">
+            <img src="/BrewingBliss/assetsnur/dalgona.jpg" alt="Dalgona Coffee" class="w-36 h-36 mx-auto rounded-lg mb-4">
+            <h3 class="font-bold text-xl">Dalgona Coffee</h3>
+            <p class="text-gray-500">Rp 25.000</p>
+            <button onclick="addOrder('Dalgona Coffee', 'dalgona.jpg', 25.000)" 
+              class="mt-2 bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700">
+              Pesan
+            </button>
+          </div>
+          <div class="menu-item text-center bg-white shadow rounded-lg p-4" data-category="coffee" data-name="capucino">
+            <img src="/BrewingBliss/assetsnur/capucino.jpg" alt="Capucino" class="w-36 h-36 mx-auto rounded-lg mb-4">
+            <h3 class="font-bold text-xl">Capucino Coffee</h3>
+            <p class="text-gray-500">Rp 25.000</p>
+            <button onclick="addOrder('Capucino Coffee', 'capucino.jpg', 25.000)" 
+              class="mt-2 bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700">
+              Pesan
+            </button>
+          </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background-color: #8B4513;" class="text-white shadow-md mt-16">
+    <div class="container mx-auto py-4 text-center">
+      ©️ 2024 Brewing Bliss
+    </div>
+  </footer>
+
+  <!-- javascript-->
+  <script>
+    function filterMenu() {
+      const searchInput = document.getElementById("searchBar").value.toLowerCase();
+      const allSections = document.querySelectorAll('.menu-section');
+      allSections.forEach(section => {
+        const menuItems = section.querySelectorAll('.menu-item');
+        let found = false;  // Flag to check if any item matches the search query
+        menuItems.forEach(item => {
+          const name = item.querySelector("h4").textContent.toLowerCase(); // Use h4 for product name
+          if (name.includes(searchInput)) {
+            item.style.display = "block";  // Show the item if it matches the search
+            found = true;  // If an item matches, we need to show the section
+          } else {
+            item.style.display = "none";  // Hide the item if it doesn't match the search
+          }
+        });
+        // If any item was found, show the section; otherwise, hide it
+        section.style.display = found ? "block" : "none";
+      });
+    }
+  </script>
+
+</body>
+
+</html>

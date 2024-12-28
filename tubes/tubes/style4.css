@@ -1,0 +1,397 @@
+body {
+    color: #052854;
+}
+
+h1,
+h2,
+h3,
+p,
+a,
+div {
+    color: #052854;
+}
+
+.search-bar {
+    position: relative;
+    /* Untuk memposisikan ikon pencarian di atas input */
+    border: 1px solid #ccc;
+    /* Garis tepi */
+    border-radius: 5px;
+    /* Sudut membulat */
+    padding: 10px;
+    /* Jarak dalam */
+}
+
+.search-bar input {
+    width: 100%;
+    /* Lebar penuh */
+    border: none;
+    /* Tanpa garis tepi */
+    outline: none;
+    /* Menghilangkan outline saat fokus */
+    padding: 10px;
+    font-size: 16px;
+}
+
+.search-bar i {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    /* Posisi ikon pencarian */
+}
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: rgb(172, 222, 255);
+    /*sesuai tema ngolab store */
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgb(46, 20, 20);
+    /* menambah efek shadow agar terlihat lebih menonjol */
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    text-decoration: none;
+    z-index: 5;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header-logo {
+    font-size: 1.5em;
+}
+
+.header-Rekomendasi a {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #052854;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* section produk */
+/* Produk Terbaru Section */
+.new-products-section {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+#new-product-item p {
+    text-decoration-color: #052854;
+}
+
+.new-products-column {
+    flex: 1;
+}
+
+.new-product-item {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgb(46, 20, 20);
+}
+
+.new-product-item img {
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.new-product-name {
+    font-weight: bold;
+}
+
+.new-product-price {
+    color: #666;
+}
+
+#Rekomendasi h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#Rekomendasi h1 {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+#Promo h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+#Promo h1 {
+    text-align: right;
+    margin-bottom: 20px;
+}
+#Produk h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+#Produk h1{
+    text-align: right;
+    margin-bottom: 20px;
+}
+/* Kategori Produk Section */
+.Rekomendasi-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    /* Tiga kolom untuk layar besar (desktop) */
+    padding: 20px;
+    background-color: rgb(172, 222, 255);
+    text-align: center;
+}
+
+.Rekomendasi-item {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+}
+
+.Rekomendasi-item img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.Rekomendasi-item h3 {
+    font-size: 1.1em;
+    color: #003366;
+    margin-bottom: 5px;
+}
+
+.Rekomendasi-item p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* section promo */
+/* Produk Promo Section */
+.promo-section {
+    padding: 20px;
+    background-color: white;
+}
+
+.promo-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+}
+
+/* Medium screens */
+@media (max-width: 1024px) {
+    .promo-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* Tiga kolom untuk layar medium (tablet) */
+    }
+}
+
+@media (max-width: 768px) {
+    .promo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Dua kolom untuk layar kecil (ponsel) */
+    }
+}
+
+.product {
+    background-color: rgb(230, 230, 230);
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+}
+
+.product img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.product-name {
+    font-weight: bold;
+}
+
+.product-price {
+    color: #666;
+}
+/*ulasan */
+.review-section {
+    margin-top: 20px;
+}
+
+/* Kategori Coffee Shop Terdekat */
+#nearby h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#nearby h3 {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.coffee-shop-list {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    /* Tiga kolom untuk layar besar (desktop) */
+    padding: 20px;
+    background-color: rgb(172, 222, 255);
+    text-align: center;
+}
+
+.coffee-shop {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+}
+
+.coffee-shop img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.coffee-shop h3 {
+    font-size: 1.1em;
+    color: #003366;
+    margin-bottom: 5px;
+}
+
+.coffee-shop h4 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.coffee-shop p {
+    font-size: 5.0em;
+    margin-bottom: 5px;
+}
+
+  .rating {
+    display: flex;
+    justify-content: center; /* Pusatkan bintang di dalam div */
+    margin-top: 10px;
+  }
+  
+  .star {
+    font-size: 35px;
+    color: gold;
+  }
+  
+
+.coffee-shop p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+#facilities h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#facilities h3 {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+#facilities h4 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.coffee-shop li {
+    text-align: left;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight:
+        bold;
+}
+
+.view-all {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.review-section {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review-card {
+    background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  text-align: left;
+}
+
+.review-header {
+    margin-bottom: 15px;
+  }
+  
+  .review-header p {
+    margin: 5px 0;
+    font-size: 1em;
+  }
+  
+  .review-image img {
+    display: block;
+    margin: 0 auto 15px auto;
+    width: 200px;
+    max-width: 200px;
+    border-radius: 5px;
+  }
+  
+.review-info {
+    margin-bottom: 10px;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.star {
+    color: #f0c600;
+    font-size: 1.5em;
+}
+
+.description {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #00296b;
+    color: #fff;
+    font-size: 0.9em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    z-index: 4;
+}

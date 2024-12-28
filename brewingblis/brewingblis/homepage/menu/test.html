@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+</head>
+<body>
+    <div class="min-h-screen bg-white flex items-center justify-center">
+        <!-- Edit Profile Container -->
+        <div class="bg-[#b36a50] p-8 rounded-xl max-w-3xl w-full relative">
+          
+          <!-- Back Button -->
+          <a href="/" class="absolute top-4 left-4 bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-500">
+            ← Back to Homepage
+          </a>
+          
+          <!-- Profile Form -->
+          <div class="flex flex-col items-center space-y-6">
+            <!-- Profile Picture with Upload Option -->
+            <div class="w-24 h-24 rounded-full overflow-hidden mb-4 relative">
+              <img src="/path/to/your-image.jpg" id="profile-img" alt="Profile Picture" class="w-full h-full object-cover" />
+              <!-- Change Image Button -->
+              <label for="image-upload" class="absolute bottom-0 right-0 bg-white text-[#b36a50] rounded-full p-2 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 15.232a6 6 0 10-8.485-8.485 6 6 0 008.485 8.485z" />
+                </svg>
+              </label>
+              <!-- File input for image upload -->
+              <input type="file" id="image-upload" class="hidden" accept="image/*" onchange="previewImage(event)" />
+            </div>
+            
+            <!-- Profile Form Title -->
+            <h2 class="text-white text-2xl font-semibold">Edit Profile</h2>
+      
+            <!-- Name Input -->
+            <div class="w-full flex flex-col space-y-2">
+              <label for="name" class="text-white font-medium">Name</label>
+              <input type="text" id="name" name="name" value="Rachivsa Athalatia Vas"
+                class="w-full p-2 text-black border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" />
+            </div>
+      
+            <!-- Contact Input -->
+            <div class="w-full flex flex-col space-y-2">
+              <label for="contact" class="text-white font-medium">Contact</label>
+              <input type="text" id="contact" name="contact" value="+1 983 766"
+                class="w-full p-2 text-black border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" />
+            </div>
+      
+            <!-- Address Input -->
+            <div class="w-full flex flex-col space-y-2">
+              <label for="address" class="text-white font-medium">Address</label>
+              <input type="text" id="address" name="address" value="Bandung"
+                class="w-full p-2 text-black border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" />
+            </div>
+      
+            <!-- Buttons -->
+            <div class="flex space-x-4 mt-6">
+              <button class="bg-white text-[#b36a50] font-semibold px-6 py-2 rounded-lg hover:bg-gray-200">Save</button>
+              <button class="bg-white text-[#b36a50] font-semibold px-6 py-2 rounded-lg hover:bg-gray-200">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        function previewImage(event) {
+          const file = event.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              document.getElementById('profile-img').src = e.target.result;
+            }
+            reader.readAsDataURL(file);
+          }
+        }
+      </script>
+      
+</body>
+</html>

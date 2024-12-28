@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minuman - Brewing Bliss</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header style="background-color: #8B4513;" class="text-white shadow-md">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <!-- Logo -->
+      <div class="text-2xl font-bold cursor-pointer" id="logo">Brewing Bliss</div>
+
+      <!-- Navigation -->
+      <nav class="space-x-6 flex items-center">
+        <a href="homi.html" class="hover:text-gray-200">Home</a>
+        <a href="menu.html" class="hover:text-gray-200">Menu</a>
+        <a href="rekomendasi.html" class="hover:text-gray-200">Coffee Shop</a>
+        <a href="#About" class="hover:text-gray-200">About</a>
+        <a href="#Help" class="hover:text-gray-200">Help</a>
+      </nav>
+
+      <!-- Filter Dropdown -->
+      <div>
+        <select id="categoryFilter" class="bg-white text-black p-2 rounded-md" onchange="filterByCategory()">
+          <option value="all">All</option>
+          <option value="coffee">Coffee</option>
+          <option value="non-coffee">Non-Coffee</option>
+          <option value="milkshake">Milkshake</option>
+          <option value="jus">Jus</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- Search Bar -->
+  <div class="container mx-auto mt-6 px-6">
+    <div class="relative bg-white border rounded-lg p-4">
+      <input type="text" id="searchBar" placeholder="Search Menu" class="w-full border-none outline-none text-lg p-2" oninput="filterMenu()">
+    </div>
+  </div>
+
+  <!-- Minuman Section -->
+  <main class="container mx-auto mt-10 px-6">
+    <h1 class="text-3xl font-bold mb-6">Minuman</h1>
+    <div class="minuman grid grid-cols-3 gap-6">
+        <div class="menu-item text-center bg-white shadow rounded-lg p-4">
+          <img src="/BrewingBliss/assetsnur/espresso.jpg" alt="Espresso Coffee" class="w-36 h-36 mx-auto rounded-lg mb-4">
+          <h3 class="font-bold text-xl">Espresso Coffee</h3>
+          <p class="text-gray-500">Rp 25.000</p>
+          <button onclick="addOrder('Espresso Coffee', 'espresso.jpg', 25000)" 
+            class="mt-2 bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700">
+            Pesan
+          </button>
+        </div>
+        <div class="menu-item text-center bg-white shadow rounded-lg p-4" data-category="coffee" data-name="latte">
+            <img src="/BrewingBliss/assetsnur/latte.jpg" alt="Espresso Coffee" class="w-36 h-36 mx-auto rounded-lg mb-4">
+            <h3 class="font-bold text-xl">Latte Coffee</h3>
+            <p class="text-gray-500">Rp 25.000</p>
+            <button onclick="addOrder('Latte Coffee', 'latte.jpg', 25000)" 
+              class="mt-2 bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700">
+              Pesan
+            </button>
+          </div>
+          <div class="menu-item text-center bg-white shadow rounded-lg p-4" data-category="coffee" data-name="dalgona coffee">
+            <img src="/BrewingBliss/assetsnur/dalgona.jpg" alt="Dalgona Coffee" class="w-36 h-36 mx-auto rounded-lg mb-4">
+            <h3 class="font-bold text-xl">Dalgona Coffee</h3>
+            <p class="text-gray-500">Rp 25.000</p>
+            <button onclick="addOrder('Dalgona Coffee', 'dalgona.jpg', 25.000)" 
+              class="mt-2 bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700">
+              Pesan
+            </button>
+          </div>
+          <div class="menu-item text-center bg-white shadow rounded-lg p-4" data-category="coffee" data-name="capucino">
+            <img src="/BrewingBliss/assetsnur/capucino.jpg" alt="Capucino" class="w-36 h-36 mx-auto rounded-lg mb-4">
+            <h3 class="font-bold text-xl">Capucino Coffee</h3>
+            <p class="text-gray-500">Rp 25.000</p>
+            <button onclick="addOrder('Capucino Coffee', 'capucino.jpg', 25.000)" 
+              class="mt-2 bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700">
+              Pesan
+            </button>
+          </div>
+          <div class="menu-item text-center bg-white shadow rounded-lg p-4" data-category="coffee" data-name="americano">
+            <img src="/BrewingBliss/assetsnur/americano.jpg" alt="Americano Coffee" class="w-36 h-36 mx-auto rounded-lg mb-4">
+            <h3 class="font-bold text-xl">Americano Coffee</h3>
+            <p class="text-gray-500">Rp 25.000</p>
+            <button onclick="addOrder('Americano Coffee', 'americano.jpg', 25.000)" 
+              class="mt-2 bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700">
+              Pesan
+            </button>
+          </div>
+          <div class="menu-item text-center bg-white shadow rounded-lg p-4" data-category="coffee" data-name="macchiato">
+            <img src="/BrewingBliss/assetsnur/macchiato.jpg" alt="Espresso Coffee" class="w-36 h-36 mx-auto rounded-lg mb-4">
+            <h3 class="font-bold text-xl">Macchiato</h3>
+            <p class="text-gray-500">Rp 25.000</p>
+            <button onclick="addOrder('Macchiato', 'macchiato.jpg', 25.000)" 
+              class="mt-2 bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700">
+              Pesan
+            </button>
+          </div>
+          <div class="menu-item text-center bg-white shadow rounded-lg p-4" data-category="coffee" data-name="robusta coffee">
+            <img src="/BrewingBliss/assetsnur/robusta.jpg" alt="Robusta Coffee" class="w-36 h-36 mx-auto rounded-lg mb-4">
+            <h3 class="font-bold text-xl">Robusta Coffee</h3>
+            <p class="text-gray-500">Rp 25.000</p>
+            <button onclick="addOrder('Robusta Coffee', 'latte.jpg', 25.000)" 
+              class="mt-2 bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700">
+              Pesan
+            </button>
+          </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="coffee" data-name="robusta">
+        <img src="/BrewingBliss/assetsnur/robusta.jpg" alt="Matcha" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Robusta Coffee</h4>
+        <p class="text-gray-600">Rp 25.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="coffee" data-name="arabica">
+        <img src="/BrewingBliss/assetsnur/arabica.jpg" alt="Matcha" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Arabica Coffee</h4>
+        <p class="text-gray-600">Rp 25.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="coffee" data-name="tubruk">
+        <img src="/BrewingBliss/assetsnur/tubruk.jpg" alt="Matcha" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Tubruk Coffee</h4>
+        <p class="text-gray-600">Rp 25.000</p>
+      </div>
+
+      <!-- Non-Coffee Items -->
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="non-coffee" data-name="matcha">
+        <img src="/BrewingBliss/assetsnur/Matcha.jpg" alt="Matcha" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Matcha</h4>
+        <p class="text-gray-600">Rp 20.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="non-coffee" data-name="thai tea">
+        <img src="/BrewingBliss/assetsnur/tai.jpg" alt="Matcha" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Thai Tea</h4>
+        <p class="text-gray-600">Rp 10.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="non-coffee" data-name="ice taro">
+        <img src="/BrewingBliss/assetsnur/taro.jpg" alt="Matcha" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg"> Ice Taro</h4>
+        <p class="text-gray-600">Rp 10.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="non-coffee" data-name="milk tea">
+        <img src="/BrewingBliss/assetsnur/milk.jpg" alt="Matcha" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg"> Milk Tea</h4>
+        <p class="text-gray-600">Rp 10.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="non-coffee" data-name="ice red velvet">
+        <img src="/BrewingBliss/assetsnur/red.jpg" alt="Matcha" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg"> Ice Red Velvet</h4>
+        <p class="text-gray-600">Rp 10.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="non-coffee" data-name="hot chocolate">
+        <img src="/BrewingBliss/assetsnur/hot chocolate.jpg" alt="Matcha" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg"> Hot Chocolate</h4>
+        <p class="text-gray-600">Rp 20.000</p>
+      </div>
+
+      <!-- Milkshake Items -->
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="milkshake" data-name="milkshake oreo">
+        <img src="/BrewingBliss/assetsnur/milkshake oreo.jpg" alt="Milkshake Oreo" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Milkshake Oreo</h4>
+        <p class="text-gray-600">Rp 15.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="milkshake" data-name="milkshake strawberry">
+        <img src="/BrewingBliss/assetsnur/milkshake strawberry.jpg" alt="Milkshake Strawberry" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Milkshake Strawberry</h4>
+        <p class="text-gray-600">Rp 15.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="milkshake" data-name="milkshake matcha">
+        <img src="/BrewingBliss/assetsnur/milkshake matcha.jpg" alt="milkshake matcha" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Milkshake Matcha</h4>
+        <p class="text-gray-600">Rp 15.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="milkshake" data-name="milkshake chocolate">
+        <img src="/BrewingBliss/assetsnur/cookies milkshake.jpg" alt="milkshake chocolate" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Milkshake Coklat</h4>
+        <p class="text-gray-600">Rp 15.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="milkshake" data-name="milkshake capucino">
+        <img src="/BrewingBliss/assetsnur/milk.jpg" alt="milkshake chocolate" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Milkshake Capucino</h4>
+        <p class="text-gray-600">Rp 15.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="milkshake" data-name="milkshake banana">
+        <img src="/BrewingBliss/assetsnur/banana.jpg" alt="milkshake chocolate" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Milkshake Banana</h4>
+        <p class="text-gray-600">Rp 15.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="milkshake" data-name="milkshake blueberry">
+        <img src="/BrewingBliss/assetsnur/blueberry milkshake.jpg" alt="milkshake chocolate" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Milkshake Blueberry</h4>
+        <p class="text-gray-600">Rp 15.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="milkshake" data-name="milkshake mango">
+        <img src="/BrewingBliss/assetsnur/mango milkshake.jpg" alt="milkshake chocolate" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Milkshake Mango</h4>
+        <p class="text-gray-600">Rp 15.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="milkshake" data-name="milkshake vanilla">
+        <img src="/BrewingBliss/assetsnur/vanilla.jpg" alt="milkshake chocolate" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Milkshake Vanilla</h4>
+        <p class="text-gray-600">Rp 15.000</p>
+      </div>
+
+      <!-- Jus Items -->
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="jus" data-name="jus mangga">
+        <img src="/BrewingBliss/assetsnur/jus mangga.jpg" alt="Jus Mangga" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Jus Mangga</h4>
+        <p class="text-gray-600">Rp 8.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="jus" data-name="jus buah naga">
+        <img src="/BrewingBliss/assetsnur/jus naga.jpg" alt="Jus Mangga" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Jus Buah Naga</h4>
+        <p class="text-gray-600">Rp 8.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="jus" data-name="jus jambu">
+        <img src="/BrewingBliss/assetsnur/jus jambu.jpg" alt="Jus Mangga" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Jus Jambu</h4>
+        <p class="text-gray-600">Rp 8.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="jus" data-name="jus jeruk">
+        <img src="/BrewingBliss/assetsnur/jus jeruk.jpg" alt="Jus Mangga" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Jus Jeruk</h4>
+        <p class="text-gray-600">Rp 8.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="jus" data-name="jus tomat">
+        <img src="/BrewingBliss/assetsnur/jus tomat.jpg" alt="Jus Mangga" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Jus Tomat</h4>
+        <p class="text-gray-600">Rp 8.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="jus" data-name="jus wortel">
+        <img src="/BrewingBliss/assetsnur/jus wortel.jpg" alt="Jus Mangga" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Jus Wortel</h4>
+        <p class="text-gray-600">Rp 8.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="jus" data-name="jus strawberry">
+        <img src="/BrewingBliss/assetsnur/jus strawberry.jpg" alt="Jus Mangga" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Jus Strawberry</h4>
+        <p class="text-gray-600">Rp 8.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="jus" data-name="jus alpukat">
+        <img src="/BrewingBliss/assetsnur/jus alpukat.jpg" alt="Jus Mangga" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Jus Alpukat</h4>
+        <p class="text-gray-600">Rp 8.000</p>
+      </div>
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-category="jus" data-name="jus melon">
+        <img src="/BrewingBliss/assetsnur/jus melon.jpg" alt="Jus Mangga" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Jus Melon</h4>
+        <p class="text-gray-600">Rp 8.000</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background-color: #8B4513;" class="text-white shadow-md mt-16">
+    <div class="container mx-auto py-4 text-center">
+      ©️ 2024 Brewing Bliss
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function filterMenu() {
+      const searchInput = document.getElementById("searchBar").value.toLowerCase();
+      const menuItems = document.querySelectorAll(".menu-item");
+
+      menuItems.forEach(item => {
+        const itemName = item.getAttribute("data-name").toLowerCase();
+        if (itemName.includes(searchInput)) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    }
+
+    function filterByCategory() {
+      const selectedCategory = document.getElementById("categoryFilter").value;
+      const menuItems = document.querySelectorAll(".menu-item");
+
+      menuItems.forEach(item => {
+        const itemCategory = item.getAttribute("data-category");
+        if (selectedCategory === "all" || itemCategory === selectedCategory) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    }
+
+    function addOrder(name, image, price) {
+    // Ambil data pesanan dari localStorage
+    let orders = JSON.parse(localStorage.getItem('orders')) || [];
+
+    // Cek apakah item sudah ada di daftar pesanan
+    const existingOrder = orders.find(order => order.name === name);
+    if (existingOrder) {
+      existingOrder.quantity++;
+    } else {
+      orders.push({ name, image, price, quantity: 1 });
+    }
+
+    // Simpan kembali ke localStorage
+    localStorage.setItem('orders', JSON.stringify(orders));
+
+    // Redirect ke halaman pesanan
+    window.location.href = 'orders.html';
+  }
+  </script>
+
+</body>
+
+</html>

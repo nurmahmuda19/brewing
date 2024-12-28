@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brewing Bliss</title>
+  <link rel="stylesheet" href="style4.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-logo" id="logo" >Brewing Bliss</div>
+    <nav class="header-menu">
+      <a href="#Rekomendasi">Home</a>
+      <a href="#Produk">Menu</a>
+      <a href="#Promo">Promo</a>
+      <a href="#keranjang">Keranjang</a>
+    </nav>
+  </header>
+  <br>
+  <!-- search bar -->
+  <div class="search-bar">
+    <input type="text" placeholder="Search Coffee Shop">
+    <i class="fa fa-search"></i>
+  </div>
+
+  <section id="Promo">
+    <h2>Diskon dan Promo</h2>
+    <h1>View all</h1>
+    <div class="Rekomendasi-grid">
+      <div class="Rekomendasi-item">
+        <img src="coffeshop4.jpeg" alt="Tutup pukul 22.00">
+        <h3>Starbucks</h3>
+        <p>Berbagai kopi dan non kopi</p>
+      </div>
+      <div class="Rekomendasi-item">
+        <img src="coffeshop5.png" alt="Tutup pukul 00.00">
+        <h3>Janji Jiwa</h3>
+        <p>Berbagai kopi dan non kopi.</p>
+      </div>
+      <div class="Rekomendasi-item">
+        <img src="coffeshop6.webp" alt="Tutup pukul 23.00">
+        <h3>Kenangan Mantan</h3>
+        <p>Berbagai kopi dan non kopi.</p>
+      </div>
+    </div>
+  </section>
+  <!-- Produk Promo Section -->
+  <section id="Produk">
+    <div class="container promo-section">
+      <h2>Produk Promo</h2>
+      <h1>View all</h1>
+      <div class="promo-grid">
+        <div class="product">
+          <img src="kopi1.jpeg" alt="Produk 1">
+          <div class="product-name">Produk 1</div>
+          <div class="product-price">Rp100.000</div>
+        </div>
+        <div class="product">
+          <img src="kopi2.jpeg" alt="Produk 2">
+          <div class="product-name">Produk 2</div>
+          <div class="product-price">Rp70.000</div>
+        </div>
+        <div class="product">
+          <img src="kopi3.jpeg" alt="Produk 3">
+          <div class="product-name">Produk 3</div>
+          <div class="product-price">Rp80.000</div>
+        </div>
+        <div class="product">
+          <img src="kopi4.jpeg" alt="Produk 4">
+          <div class="product-name">Produk 4</div>
+          <div class="product-price">Rp50.000</div>
+        </div>
+        <div class="product">
+          <img src="kopi6.webp" alt="Produk 5">
+          <div class="product-name">Produk 5</div>
+          <div class="product-price">Rp10.000</div>
+        </div>
+        <div class="product">
+          <img src="kopi5.webp" alt="Produk 6">
+          <div class="product-name">Produk 6</div>
+          <div class="product-price">Rp20.000</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="promo">
+   <!--ulasan-->
+   <section>
+        <div class="review-card">
+          <div class="review-info">
+            <p>Nama Pengguna:</p>
+            <p>Nama Coffee Shop:</p>
+          </div>
+          <div class="rating">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span> 
+        
+          </div>
+          <div class="description">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et  
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+          </div>
+        </div>
+        
+        <div class="review-card">
+          <div class="review-info">
+            <p>Nama Pengguna:</p>
+            <p>Nama Coffee Shop:</p>
+          </div>
+
+          <div class="rating">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <div class="description">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et  
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>  
+          </div>
+        </div>
+        </div>
+   </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    ©️ 2024 Brewing Bliss
+  </footer>
+  <script>
+  // logo notif
+     document.getElementById("logo").addEventListener("click", function () {
+        alert("Selamat datang di Brewing Bliss!");
+      });
+
+  // efek tekan rekomendasi
+      var RekomendasiItems = document.getElementById("Rekomendasi").getElementsByClassName("Rekomendasi-item");
+        Array.from(RekomendasiItems).forEach(function (item) {
+          item.addEventListener("mouseover", function () {
+            item.style.backgroundColor = "rgb(220, 220, 220)";
+          });
+          item.addEventListener("mouseout", function () {
+            item.style.backgroundColor = "#f0f0f0";
+          });
+        });
+
+ // efek tekan promo
+  var PromoItems = document.getElementById("Promo").getElementsByClassName("Rekomendasi-item");
+  Array.from(PromoItems).forEach(function (item) {
+    item.addEventListener("mouseover", function () {
+      item.style.backgroundColor = "rgb(220, 220, 220)";
+    });
+    item.addEventListener("mouseout", function () {
+      item.style.backgroundColor = "#f0f0f0";
+    });
+  });
+
+  </script>
+
+</body>
+
+</html>

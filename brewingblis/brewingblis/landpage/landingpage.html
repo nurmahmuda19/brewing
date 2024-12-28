@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  <title>Brewing Bliss</title>
+</head>
+<body class="flex flex-col bg-[#c09474]">
+
+  <!-- Header -->
+  <header style="background-color: #8B4513;" class="text-white shadow-md fixed top-0 left-0 w-full z-50">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <!-- Logo -->
+      <div class="text-2xl font-bold cursor-pointer" id="logo">Brewing Bliss</div>
+
+      <!-- Navigation -->
+      <nav class="space-x-6 flex items-center">
+        <a href="/BrewingBliss/homepage/BrewingBliss.html" class="hover:text-gray-200">Home</a>
+        <a href="/BrewingBliss/nur/menu.html" class="hover:text-gray-200">Menu</a>
+        <a href="/BrewingBliss/nur/rekomendasi.html" class="hover:text-gray-200">Coffee Shop</a>
+        <a href="/BrewingBliss/homepage/menu/about.html" class="hover:text-gray-200">About</a>
+        <a href="/BrewingBliss/homepage/menu/help.html" class="hover:text-gray-200">Help</a>
+
+        <!-- Notification Icon -->
+        <button class="relative hover:text-gray-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V4a2 2 0 10-4 0v1.341C8.67 6.165 8 7.388 8 9v5.158c0 .538-.214 1.055-.595 1.437L6 17h9z" />
+          </svg>
+        </button>
+
+        <!-- Profile Icon -->
+        <button class="relative hover:text-gray-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M5.121 17.804A11.967 11.967 0 0112 15c2.486 0 4.788.92 6.879 2.457M12 3a4 4 0 110 8 4 4 0 010-8z" />
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Konten -->
+  <main class="flex flex-grow items-center justify-center mt-[80px] px-6">
+    <!-- Bagian Kiri -->
+    <div class="flex w-1/2 flex-col items-center justify-center">
+      <!-- Logo -->
+      <div class="text-center">
+        <img src="/BrewingBliss/assets/iconBB0.png" alt="Logo Brewing Bliss" class="w-[384px] h-[384px] mb-6">
+      </div>
+      <!-- Deskripsi -->
+      <p class="mt-6 text-left text-black text-lg">
+        Platform yang memudahkan pengguna <br>untuk mencari Coffee Shop yang <br>nyaman dan sesuai kebutuhan.
+      </p>
+    </div>
+
+    <!-- Bagian Kanan -->
+    <div class="flex w-1/2 flex-col items-center justify-center space-y-6">
+      <button class="w-64 py-4 text-lg font-medium text-[#D6B591] bg-[#8B5A37] rounded-md hover:bg-[#7B4A30]" 
+              onclick="window.location.href='/BrewingBliss/landpage/masuk.html'">
+        Masuk
+      </button>
+      <button class="w-64 py-4 text-lg font-medium text-[#D6B591] bg-[#8B5A37] rounded-md hover:bg-[#7B4A30]" 
+              onclick="window.location.href='/BrewingBliss/landpage/registrasi.html'">
+        Daftar
+      </button>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brewing Bliss</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    #carousel {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="relative bg-cover bg-center text-white shadow-md py-12" style="background-image: url('https://i.pinimg.com/736x/da/77/87/da7787a98a3d569869133782327dbd6d.jpg')">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="relative z-10 container mx-auto flex justify-between items-center px-6">
+      <div class="text-2xl font-bold cursor-pointer" id="logo">Brewing Bliss</div>
+      <nav class="hidden md:flex space-x-6">
+        <a href="home.html" class="hover:text-gray-200">Home</a>
+        <a href="rekomendasi.html" class="hover:text-gray-200">Coffee Shop</a>
+        <a href="#About" class="hover:text-gray-200">About</a>
+        <a href="#Help" class="hover:text-gray-200">Help</a>
+      </nav>
+      <button id="menuButton" class="md:hidden hover:text-gray-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+    <div class="relative z-10 text-center mt-6">
+      <h1 class="text-4xl md:text-5xl font-bold">Dibuat dengan Sempurna</h1>
+      <p class="text-lg md:text-xl mt-2">Dari pemenang rasa terbaik hingga favorit para ahli, kami memiliki kopi yang tepat untuk Anda.</p>
+    </div>
+  </header>
+  </header>
+
+  <body class="bg-gray-100 text-gray-800">
+
+    <!-- Search Bar -->
+    <div class="container mx-auto mt-6 px-6">
+      <div class="relative bg-white border rounded-lg p-4">
+        <input type="text" id="searchBar" placeholder="Search Coffee Shop" 
+          class="w-full border-none outline-none text-lg p-2" oninput="filterCoffeeShop()">
+        <i class="absolute top-3 right-3 text-gray-500">🔍</i>
+      </div>
+    </div>
+  
+    <!-- Main Section -->
+    <div class="container mx-auto p-6">
+      <div class="flex flex-col md:flex-row items-center">
+        <!-- Left Section -->
+        <div class="md:w-1/2 p-4">
+          <div class="border-2 border-gray-300 rounded-lg p-6 bg-white shadow-lg">
+            <div class="flex justify-center">
+              <img src="B-removebg-preview (1).png" alt="Coffee Image" class="rounded-lg w-1/2">
+            </div>
+            <br>
+            <h2 class="text-center text-xl font-semibold mb-4">YOUR COFFEE JOURNEY STARTS HERE</h2>
+          </div>
+        </div>
+  
+        <!-- Right Section -->
+        <div class="md:w-1/2 p-4">
+          <h2 class="text-2xl font-bold text-gray-800 mb-4">Mengapa memilih Brewing Bliss?</h2>
+          <p class="text-gray-600 mb-4">
+            Kami memahami kebutuhan pemilik coffee shop dan pecinta kopi untuk mendapatkan pengalaman terbaik. Berikut alasan mengapa Anda akan menyukai kami:
+          </p>
+          <ul class="space-y-6">
+            <li class="flex items-start">
+              <div class="relative w-14 h-14 flex-shrink-0">
+                <div class="absolute inset-0 bg-yellow-200 rounded-full flex items-center justify-center">
+                  <img src="coffee-shop.png" class="w-9 h-9">
+                </div>
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-semibold text-gray-800">Keuntungan untuk Pemilik Coffee Shop</h3>
+                <p class="text-gray-600">Kami bantu Anda fokus pada rasa kopi, sementara kami tangani promosi Anda.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <div class="relative w-14 h-14 flex-shrink-0">
+                <div class="absolute inset-0 bg-yellow-200 rounded-full flex items-center justify-center">
+                  <img src="coffee-cup.png" class="w-9 h-9">
+                </div>
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-semibold text-gray-800">Eksplorasi untuk Pecinta Kopi</h3>
+                <p class="text-gray-600">Temukan cerita menarik, ulasan, dan saran tentang kopi terbaik yang dapat Anda nikmati di seluruh dunia.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <div class="relative w-14 h-14 flex-shrink-0">
+                <div class="absolute inset-0 bg-yellow-200 rounded-full flex items-center justify-center">
+                  <img src="coffee-beans.png" class="w-9 h-9">
+                </div>
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-semibold text-gray-800">Komunitas Pecinta Kopi</h3>
+                <p class="text-gray-600">Bergabunglah dengan komunitas pecinta kopi kami untuk berbagi pengalaman dan mendapatkan inspirasi.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  <!-- Rekomendasi Section -->
+<section class="container mx-auto py-10 px-4">
+  <!-- Header Section -->
+  <div class="flex justify-between items-center mb-8">
+    <h2 class="text-2xl font-semibold">Rekomendasi</h2>
+    <a href="rekomendasi.html" class="text-blue-600 hover:underline text-lg">View all</a>
+  </div>
+  <body class="bg-gray-100">
+    <div class="relative w-full py-8 px-4">
+      <!-- Button Previous -->
+      <button id="prevBtn" class="absolute top-1/2 -translate-y-1/2 left-4 p-3 bg-gray-200 rounded-full hover:bg-gray-300 shadow-md z-10">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+  
+      <!-- Carousel Wrapper -->
+      <div id="carousel" class="relative w-full overflow-hidden whitespace-nowrap scroll-smooth">
+      <!-- Item 1 -->
+      <div class="inline-block w-72 mr-4 align-top">
+        <div class="rounded-lg overflow-hidden bg-white shadow-md h-full flex flex-col">
+          <img src="cafe.jpg" alt="Cafe Serene" class="w-full h-48 object-cover">
+          <div class="p-4 text-center flex-grow">
+            <h3 class="font-semibold text-lg mb-2">Cafe Serene</h3>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" 
+            onclick="openModal('Cafe Serene', '★★★★☆', 'Jl. Contoh No.1, Jakarta', 'cafe.jpg', 'Cozy place to relax and enjoy coffee.')">
+              Details
+            </button>
+              </div>
+        </div>
+      </div>
+
+        <!-- Item 2 -->
+        <div class="inline-block w-72 mr-4 align-top">
+          <div class="rounded-lg overflow-hidden bg-white shadow-md h-full flex flex-col">
+            <img src="cikole.jpg" alt="Cafe Cikole" class="w-full h-48 object-cover">
+            <div class="p-4 text-center flex-grow">
+              <h3 class="font-semibold text-lg mb-2">Cafe Cikole</h3>
+              <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="openModal('Cafe Cikole', '★★★★☆', 'Jl. Pahlawan No.3, Bandung', 'cikole.jpg', 'kii.html')">Details</button>
+            </div>
+          </div>
+        </div>
+        <!-- Item 1 -->
+        <div class="inline-block w-72 mr-4 align-top">
+          <div class="rounded-lg overflow-hidden bg-white shadow-md h-full flex flex-col">
+            <img src="cafe.jpg" alt="Cafe Serene" class="w-full h-48 object-cover">
+            <div class="p-4 text-center flex-grow">
+              <h3 class="font-semibold text-lg mb-2">Cafe Serene</h3>
+              <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="openModal('Cafe Serene', '★★★★☆', 'Jl. Contoh No.1, Jakarta', 'cafe.jpg', 'kii.html')">Details</button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Item 2 -->
+        <div class="inline-block w-72 mr-4 align-top">
+          <div class="rounded-lg overflow-hidden bg-white shadow-md h-full flex flex-col">
+            <img src="cikole.jpg" alt="Cafe Cikole" class="w-full h-48 object-cover">
+            <div class="p-4 text-center flex-grow">
+              <h3 class="font-semibold text-lg mb-2">Cafe Cikole</h3>
+              <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="openModal('Cafe Cikole', '★★★★☆', 'Jl. Pahlawan No.3, Bandung', 'cikole.jpg', 'kii.html')">Details</button>
+            </div>
+          </div>
+        </div>
+        <!-- Item 1 -->
+        <div class="inline-block w-72 mr-4 align-top">
+          <div class="rounded-lg overflow-hidden bg-white shadow-md h-full flex flex-col">
+            <img src="cafe.jpg" alt="Cafe Serene" class="w-full h-48 object-cover">
+            <div class="p-4 text-center flex-grow">
+              <h3 class="font-semibold text-lg mb-2">Cafe Serene</h3>
+              <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="openModal('Cafe Serene', '★★★★☆', 'Jl. Contoh No.1, Jakarta', 'cafe.jpg', 'kii.html')">Details</button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Item 2 -->
+        <div class="inline-block w-72 mr-4 align-top">
+          <div class="rounded-lg overflow-hidden bg-white shadow-md h-full flex flex-col">
+            <img src="cikole.jpg" alt="Cafe Cikole" class="w-full h-48 object-cover">
+            <div class="p-4 text-center flex-grow">
+              <h3 class="font-semibold text-lg mb-2">Cafe Cikole</h3>
+              <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="openModal('Cafe Cikole', '★★★★☆', 'Jl. Pahlawan No.3, Bandung', 'cikole.jpg', 'kii.html')">Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Button Next -->
+      <button id="nextBtn" class="absolute top-1/2 -translate-y-1/2 right-4 p-3 bg-gray-200 rounded-full hover:bg-gray-300 shadow-md z-10">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center hidden">
+      <div class="bg-white rounded-lg shadow-lg w-96 p-6 relative">
+        <!-- Close Button -->
+        <button id="closeModal" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center shadow-md hover:bg-gray-300 transition" onclick="closeModal()">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+  
+        <!-- Modal Content -->
+        <img id="modalImage" src="" alt="Coffee Shop" class="w-full h-48 object-cover rounded mb-4">
+        <h2 id="modalTitle" class="text-2xl font-bold mb-2 text-center"></h2>
+        <p id="modalRating" class="text-yellow-500 text-lg font-semibold mb-2 text-center"></p>
+        <p id="modalAddress" class="text-gray-700 mb-4 text-center"></p>
+  
+        <!-- Buttons -->
+        <div class="flex flex-col space-y-2">
+          <a id="modalMenu" href="kii.html" target="_blank" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-grey-600 text-center">Lihat Menu</a>
+          <a id="bookingButton" href="boking.html" target="_blank" 
+          class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-gray-600 block text-center">Booking Tempat</a>
+           </div>
+      </div>
+    </div>
+  
+    <!-- Loading Animation -->
+    <div id="loadingOverlay" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex justify-center items-center z-50">
+      <div class="text-white text-lg font-semibold flex items-center">
+        <svg class="animate-spin h-8 w-8 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path d="M4 12a8 8 0 0116 0" fill="currentColor" stroke="none"></path>
+        </svg>
+        Memuat...
+      </div>
+    </div>
+  
+    
+<!-- Promo Section -->
+<section class="container mx-auto py-10 px-4">
+  <!-- Header Section -->
+  <div class="flex justify-between items-center mb-8">
+    <h2 class="text-2xl font-semibold">Promo dan Diskon Spesial</h2>
+    <a href="promo.html" class="text-blue-600 hover:underline text-lg">View all</a>
+  </div>
+
+  <!-- Promo Cards Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Promo Card 1 -->
+    <div class="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-lg transition flex flex-col">
+      <img src="3.png" alt="Diskon Starbucks" class="w-full h-48 object-cover rounded-lg mb-4">
+      <h3 class="text-xl font-bold text-gray-700">Diskon 50% untuk Kopi Kedua</h3>
+      <p class="text-gray-600 mt-2">
+        Nikmati kopi favorit Anda dengan voucher Starbucks spesial! Tukarkan poin Anda sekarang dan rasakan kenikmatannya.
+      </p>
+      <button class="mt-auto px-8 py-3 bg-blue-800 text-white font-bold rounded-lg hover:bg-blue-600 transition-all"
+          onclick="window.location.href='promo.html?type=discount50'">
+        Klaim Voucher
+      </button>    
+    </div>
+
+    <!-- Promo Card 2 -->
+    <div class="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-lg transition flex flex-col">
+      <img src="kopi.jpg" alt="Diskon Kopi Kenangan" class="w-full h-48 object-cover rounded-lg mb-4">
+      <h3 class="text-xl font-bold text-gray-700">Diskon 50% Hingga Rp55.000</h3>
+      <p class="text-gray-600 mt-2">
+        Jajan seru di Kopi Kenangan pakai Kartu Debit LINE Bank dan nikmati diskon 50%! Periode promo hingga 31 Desember 2023.<br>
+        Gunakan kode promo <span class="font-bold text-red-700">KKLINE50</span> untuk pengalaman ngopi hemat.
+      </p>
+      <button class="mt-auto px-8 py-3 bg-blue-800 text-white font-bold rounded-lg hover:bg-blue-600 transition-all"
+          onclick="window.location.href='promo.html?type=discount55k'">
+        Klaim Voucher
+      </button>    
+    </div>
+
+    <!-- Promo Card 3 -->
+    <div class="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-lg transition flex flex-col">
+      <img src="buy.jpeg" alt="Promo Buy 1 Get 1" class="w-full h-48 object-cover rounded-lg mb-4">
+      <h3 class="text-xl font-bold text-gray-700">Buy 1 Get 1 Free</h3>
+      <p class="text-gray-600 mt-2">
+        Jangan lewatkan! Beli satu kopi favorit Anda dan dapatkan satu lagi secara gratis hanya di Pastel Palette.
+      </p>
+      <button class="mt-auto px-8 py-3 bg-blue-800 text-white font-bold rounded-lg hover:bg-blue-600 transition-all"
+          onclick="window.location.href='promo.html?type=buy1get1'">
+        Klaim Voucher
+      </button>    
+    </div>
+  </div>
+</section>
+
+<!-- Review Section -->
+<div class="flex flex-col items-center mb-8">
+  <h2 class="text-2xl font-semibold mb-6 text-center">Ulasan Pelanggan</h2>
+  <div id="reviewList" class="w-full max-w-2xl">
+    <!-- Sample Review -->
+    <div class="bg-white p-4 rounded shadow mb-4 flex items-start" data-review-id="1" data-user-id="1">
+      <img src="pro.jpeg" alt="John Doe" class="w-12 h-12 rounded-full mr-4">
+      <div>
+        <h3 class="font-semibold">John Doe</h3>
+        <p class="text-yellow-500">⭐⭐⭐⭐</p>
+        <p class="font-semibold">Serene Cafe</p>
+        <p>Tempat yang nyaman untuk bekerja!</p>
+        <div class="mt-2 flex space-x-4">
+          <button class="text-green-500 hover:underline" onclick="likeReview(1)">Like <span id="likeCount-1">0</span></button>
+          <button class="text-red-500 hover:underline" onclick="dislikeReview(1)">Dislike <span id="dislikeCount-1">0</span></button>
+        </div>
+      </div>
+    </div>
+    <!-- Another Review -->
+    <div class="bg-white p-4 rounded shadow mb-4 flex items-start" data-review-id="2" data-user-id="2">
+      <img src="pr.jpeg" alt="Jane Smith" class="w-12 h-12 rounded-full mr-4">
+      <div>
+        <h3 class="font-semibold">Jane Smith</h3>
+        <p class="text-yellow-500">⭐⭐⭐⭐⭐</p>
+        <p class="font-semibold">Cikole Cafe</p>
+        <p>Coffeenya enak dan pelayanannya ramah!</p>
+        <div class="mt-2 flex space-x-4">
+          <button class="text-green-500 hover:underline" onclick="likeReview(2)">Like <span id="likeCount-2">0</span></button>
+          <button class="text-red-500 hover:underline" onclick="dislikeReview(2)">Dislike <span id="dislikeCount-2">0</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button onclick="openReviewModal()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Tambahkan Ulasan</button>
+</div>
+
+<!-- Review Modal -->
+<div id="reviewModal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center hidden">
+  <div class="bg-white rounded-lg shadow-lg w-96 p-6 relative">
+    <button id="closeReviewModal" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center shadow-md hover:bg-gray-300 transition" onclick="closeReviewModal()">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <h2 class="text-2xl font-bold mb-4 text-center">Tambahkan Ulasan</h2>
+    <form id="reviewForm" class="space-y-4">
+      <input type="hidden" id="editingReviewId" value="">
+      <input type="hidden" id="loggedInUserId" value="1"> <!-- Assume user ID is 1 -->
+      <div>
+        <label for="reviewerName" class="block text-sm font-medium text-gray-700">Nama Anda</label>
+        <input type="text" id="reviewerName" class="w-full p-3 border border-gray-300 rounded-md" required>
+      </div>
+      <div>
+        <label for="reviewRating" class="block text-sm font-medium text-gray-700">Rating</label>
+        <select id="reviewRating" class="w-full p-3 border border-gray-300 rounded-md" required>
+          <option value="">Pilih Rating</option>
+          <option value="1">1 - Sangat Buruk</option>
+          <option value="2">2 - Buruk</option>
+          <option value="3">3 - Cukup</option>
+          <option value="4">4 - Baik</option>
+          <option value="5">5 - Sangat Baik</option>
+        </select>
+      </div>
+      <div>
+        <label for="coffeeshopName" class="block text-sm font-medium text-gray-700">Nama Coffee Shop</label>
+        <input type="text" id="coffeeshopName" class="w-full p-3 border border-gray-300 rounded-md" required>
+      </div>
+      <div>
+        <label for="reviewContent" class="block text-sm font-medium text-gray-700">Ulasan Anda</label>
+        <textarea id="reviewContent" class="w-full p-3 border border-gray-300 rounded-md" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="w-full bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600">Kirim Ulasan</button>
+    </form>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-white py-4" style="background-color: #8B4513;">
+  <div class="container mx-auto text-center">©️ 2024 Brewing Bliss</div>
+</footer>  
+
+<script>
+  window.onload = () => {
+    document.getElementById('loadingScreen').classList.add('hidden');
+  };
+
+  const carousel = document.getElementById('carousel');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalRating = document.getElementById('modalRating');
+    const modalAddress = document.getElementById('modalAddress');
+    const modalDescription = document.getElementById('modal');
+    const modalImage = document.getElementById('modalImage');
+    const modalMenu = document.getElementById('modalMenu');
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    const bookingButton = document.getElementById('bookingButton');
+    const modalMenuButton = document.getElementById('modalMenu');
+
+    prevBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+
+    function openModal(name, rating, address, image, menuUrl) {
+      modalTitle.textContent = name;
+      modalRating.textContent = rating;
+      modalAddress.textContent = address;
+      modalImage.src = image;
+      modalMenu.href = menuUrl;
+      modal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+    }
+
+    function showLoading() {
+      loadingOverlay.classList.remove('hidden');
+      setTimeout(() => {
+        loadingOverlay.classList.add('hidden');
+      }, 2000);
+    }
+
+    // Event listener untuk tombol "Lihat Menu"
+    modalMenuButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      showLoading();
+      setTimeout(() => {
+        window.location.href = modalMenuButton.href;
+      }, 2000);
+    });
+
+    // Event listener untuk tombol "Booking Tempat"
+    bookingButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      showLoading();
+      setTimeout(() => {
+        window.location.href = bookingButton.href;
+      }, 2000);
+    });
+  // Track likes and dislikes for each review
+  const reviewVotes = {
+      1: { likes: 0, dislikes: 0 },
+      2: { likes: 0, dislikes: 0 },
+    };
+
+    function likeReview(reviewId) {
+      // Increment likes count for the review
+      reviewVotes[reviewId].likes++;
+      // Update like count in the DOM
+      document.getElementById(`likeCount-${reviewId}`).textContent = reviewVotes[reviewId].likes;
+    }
+
+    function dislikeReview(reviewId) {
+      // Increment dislikes count for the review
+      reviewVotes[reviewId].dislikes++;
+      // Update dislike count in the DOM
+      document.getElementById(`dislikeCount-${reviewId}`).textContent = reviewVotes[reviewId].dislikes;
+    }
+
+    const reviewModal = document.getElementById('reviewModal');
+    const reviewForm = document.getElementById('reviewForm');
+    const reviewList = document.getElementById('reviewList');
+
+    function openReviewModal() {
+      reviewModal.classList.remove('hidden');
+    }
+
+    function closeReviewModal() {
+      reviewModal.classList.add('hidden');
+    }
+
+    reviewForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const name = document.getElementById('reviewerName').value;
+      const rating = document.getElementById('reviewRating').value;
+      const content = document.getElementById('reviewContent').value;
+      const placeholderImage = "https://via.placeholder.com/50";
+      const editingReviewId = document.getElementById('editingReviewId').value;
+      const userId = document.getElementById('loggedInUserId').value;
+
+      if (editingReviewId) {
+        // Edit existing review
+        const reviewItem = document.querySelector(`[data-review-id='${editingReviewId}']`);
+        reviewItem.innerHTML = `
+          <img src="${placeholderImage}" alt="${name}" class="w-12 h-12 rounded-full mr-4">
+          <div>
+            <h3 class="font-semibold">${name}</h3>
+            <p class="text-yellow-500">${'⭐'.repeat(rating)}</p>
+            <p>${content}</p>
+            <div class="mt-2 flex space-x-4">
+              <button class="text-green-500 hover:underline" onclick="likeReview(${editingReviewId})">Like <span id="likeCount-${editingReviewId}">0</span></button>
+              <button class="text-red-500 hover:underline" onclick="dislikeReview(${editingReviewId})">Dislike <span id="dislikeCount-${editingReviewId}">0</span></button>
+            </div>
+          </div>
+        `;
+      } else {
+        // Add new review
+        const reviewId = Date.now();
+        const reviewItem = document.createElement('div');
+        reviewItem.classList.add('bg-white', 'p-4', 'rounded', 'shadow', 'mb-4', 'flex', 'items-start');
+        reviewItem.setAttribute('data-review-id', reviewId);
+        reviewItem.setAttribute('data-user-id', userId);
+        reviewItem.innerHTML = `
+          <img src="${placeholderImage}" alt="${name}" class="w-12 h-12 rounded-full mr-4">
+          <div>
+            <h3 class="font-semibold">${name}</h3>
+            <p class="text-yellow-500">${'⭐'.repeat(rating)}</p>
+            <p>${content}</p>
+            <div class="mt-2 flex space-x-4">
+              <button class="text-green-500 hover:underline" onclick="likeReview(${reviewId})">Like <span id="likeCount-${reviewId}">0</span></button>
+              <button class="text-red-500 hover:underline" onclick="dislikeReview(${reviewId})">Dislike <span id="dislikeCount-${reviewId}">0</span></button>
+            </div>
+          </div>
+        `;
+        reviewList.appendChild(reviewItem);
+      }
+
+      reviewForm.reset();
+      document.getElementById('editingReviewId').value = '';
+      closeReviewModal();
+    });
+</script>
+</body>
+
+</html>

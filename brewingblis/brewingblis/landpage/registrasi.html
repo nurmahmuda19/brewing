@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Daftar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+
+    <!-- Form Registrasi -->
+    <div class="w-full sm:w-2/3 lg:w-1/3 bg-[#622a07] p-16 rounded-lg shadow-md relative">
+        <!-- Back Button inside the box -->
+        <a href="/BrewingBliss/landpage/masuk.html" 
+           class="absolute top-4 left-4 text-3xl text-white px-6 py-4 rounded-lg">
+           ←
+        </a>
+        <h2 class="text-2xl font-bold mb-6 text-white">Daftar</h2>
+        <form id="registrationForm">
+            <div class="mb-4">
+                <label class="block text-gray-200 text-[#c09474] font-bold mb-2" for="name">
+                    Nama
+                </label>
+                <input
+                    class="shadow appearance-none border border-[#c09474] bg-[#f3e0c3] rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="name" type="text" placeholder="Masukkan nama lengkap" required>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-200 text-[#c09474] font-bold mb-2" for="email">
+                    Email Address
+                </label>
+                <input
+                    class="shadow appearance-none border border-[#c09474] bg-[#f3e0c3] rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="email" type="email" placeholder="Masukkan email" required>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-200 text-[#c09474] font-bold mb-2" for="password">
+                    Password
+                </label>
+                <input
+                    class="shadow appearance-none border border-[#c09474] bg-[#f3e0c3] rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="password" type="password" placeholder="Masukkan password" required>
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-gray-200 text-[#c09474] font-bold mb-1" for="confirm_password">
+                    Ulangi Password
+                </label>
+                <input
+                    class="shadow appearance-none border border-[#c09474] bg-[#f3e0c3] rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="confirm_password" type="password" placeholder="Ulangi password" required>
+                <p id="error-message" class="text-red-500 text-xs italic hidden">Password tidak cocok.</p>
+            </div>
+
+            <div class="mb-2 flex justify-center">
+                <button
+                    class="bg-[#c09474] text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl focus:outline-none focus:shadow-outline"
+                    type="submit">
+                    Daftar
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            // Reset error message visibility
+            errorMessage.classList.add('hidden');
+
+            // Check if all fields are filled
+            if (!name || !email || !password || !confirmPassword) {
+                alert('Harap isi semua field.');
+                return;
+            }
+
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                errorMessage.classList.remove('hidden');
+                return;
+            }
+
+            // If all checks pass, proceed
+            alert('Registrasi berhasil!');
+            window.location.href = '/BrewingBliss/landpage/masuk.html';
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brewing Bliss</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header style="background-color: #8B4513;" class="text-white shadow-md">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <!-- Logo -->
+      <div class="text-2xl font-bold cursor-pointer" id="logo">Brewing Bliss</div>
+
+      <!-- Navigation -->
+      <nav class="space-x-6 flex items-center">
+        <a href="/BrewingBlis/php/homi.html" class="hover:text-gray-200">Home</a>
+        <a href="/BrewingBlis/php/menu.html" class="hover:text-gray-200">Menu</a>
+        <a href="#" class="hover:text-gray-200">Coffee Shop</a>
+        <a href="#" class="hover:text-gray-200">About</a>
+        <a href="" class="hover:text-gray-200">Help</a>
+
+        <!-- Notification Icon -->
+        <button class="relative hover:text-gray-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V4a2 2 0 10-4 0v1.341C8.67 6.165 8 7.388 8 9v5.158c0 .538-.214 1.055-.595 1.437L6 17h9z" />
+          </svg>
+        </button>
+
+        <!-- Profile Icon -->
+        <button class="relative hover:text-gray-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M5.121 17.804A11.967 11.967 0 0112 15c2.486 0 4.788.92 6.879 2.457M12 3a4 4 0 110 8 4 4 0 010-8z" />
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Search Bar with Back Button -->
+  <div class="container mx-auto mt-6 px-6 flex items-center">
+    <a href="/BrewingBlis/php/homi.html" 
+       class="text-3xl text-white px-6 py-4 rounded-lg mr-4 bg-gray-500">
+       ←
+    </a>
+    <div class="relative bg-white border rounded-lg p-4 flex-1">
+      <input type="text" id="searchBar" placeholder="Search Menu" 
+      class="w-full border-none outline-none text-lg p-2" oninput="filterMenu()">
+    </div>
+  </div>
+
+  <!-- Menu Section -->
+  <main class="container mx-auto mt-10 px-6 space-y-16">
+    <!-- Minuman -->
+    <section id="Minuman" class="menu-section">
+      <h3 class="text-2xl font-semibold mb-2">Minuman</h3>
+      <h1 class="text-right text-xl mb-4"><a href="/BrewingBlis/php/minum.php" class="text-blue-600 hover:underline">View all</a></h1>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Minuman Items -->
+        <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-name="espresso">
+          <img src="/assetsnur/espresso.jpg" alt="Espresso" class="w-36 h-36 mx-auto rounded-lg mb-4">
+          <h4 class="font-bold text-lg mb-2">Espresso</h4>
+          <p class="text-gray-600">Rp 15.000</p>
+          <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded mt-2">View Product</button>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-name="latte">
+          <img src="/assetsnur/latte.jpg" alt="Latte" class="w-36 h-36 mx-auto rounded-lg mb-4">
+          <h4 class="font-bold text-lg mb-2">Latte</h4>
+          <p class="text-gray-600">Rp 25.000</p>
+          <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded mt-2">View Product</button>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-name="matcha">
+          <img src="/assetsnur/Matcha.jpg" alt="Matcha" class="w-36 h-36 mx-auto rounded-lg mb-4">
+          <h4 class="font-bold text-lg mb-2">Matcha</h4>
+          <p class="text-gray-600">Rp 20.000</p>
+          <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded mt-2">View Product</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Makanan -->
+    <section id="Makanan" class="menu-section">
+      <h3 class="text-2xl font-semibold mb-2">Makanan</h3>
+      <h1 class="text-right text-xl mb-4"><a href="/BrewingBlis/php/makanan.html" class="text-blue-600 hover:underline">View all</a></h1>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Makanan Items -->
+        <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-name="steak ayam">
+          <img src="/BrewingBliss/assetsnur/steakayam.jpg" alt="Steak Ayam" class="w-36 h-36 mx-auto rounded-lg mb-4">
+          <h4 class="font-bold text-lg mb-2">Steak Ayam</h4>
+          <p class="text-gray-600">Rp 25.000</p>
+          <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded mt-2">View Product</button>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-name="beaf steak">
+          <img src="/BrewingBliss/assetsnur/beaf steak.jpg" alt="Beaf Steak" class="w-36 h-36 mx-auto rounded-lg mb-4">
+          <h4 class="font-bold text-lg mb-2">Beaf Steak</h4>
+          <p class="text-gray-600">Rp 30.000</p>
+          <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded mt-2">View Product</button>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-name="creamy salmon and shrimp pasta">
+          <img src="/BrewingBliss/assetsnur/pasta.jpg" alt="Creamy Salmon and Shrimp Pasta" class="w-36 h-36 mx-auto rounded-lg mb-4">
+          <h4 class="font-bold text-lg mb-2">Creamy Salmon and Shrimp Pasta</h4>
+          <p class="text-gray-600">Rp 35.000</p>
+          <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded mt-2">View Product</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cemilan -->
+    <section id="Cemilan" class="menu-section">
+      <h3 class="text-2xl font-semibold mb-2">Cemilan</h3>
+      <h1 class="text-right text-xl mb-4"><a href="/BrewingBlis/php/cemilan.html" class="text-blue-600 hover:underline">View all</a></h1>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Cemilan Items -->
+        <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-name="donat">
+          <img src="/BrewingBliss/assetsnur/cookies.jpg" alt="Donat" class="w-36 h-36 mx-auto rounded-lg mb-4">
+          <h4 class="font-bold text-lg mb-2">Donat</h4>
+          <p class="text-gray-600">Rp 12.000</p>
+          <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded mt-2">View Product</button>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-name="kue cubir">
+          <img src="/BrewingBliss/assetsnur/banana.jpg" alt="Kue Cubir" class="w-36 h-36 mx-auto rounded-lg mb-4">
+          <h4 class="font-bold text-lg mb-2">Kue Cubir</h4>
+          <p class="text-gray-600">Rp 8.000</p>
+          <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded mt-2">View Product</button>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-name="kentang goreng">
+          <img src="/BrewingBliss/assetsnur/beaf steak.jpg" alt="Kentang Goreng" class="w-36 h-36 mx-auto rounded-lg mb-4">
+          <h4 class="font-bold text-lg mb-2">Kentang Goreng</h4>
+          <p class="text-gray-600">Rp 10.000</p>
+          <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded mt-2">View Product</button>
+        </div>
+      </div>
+    </section>
+  </main>  
+
+  <script>
+    function filterMenu() {
+      const searchInput = document.getElementById("searchBar").value.toLowerCase();
+      const allSections = document.querySelectorAll('.menu-section');
+      allSections.forEach(section => {
+        const menuItems = section.querySelectorAll('.menu-item');
+        let found = false;  // Flag to check if any item matches the search query
+        menuItems.forEach(item => {
+          const name = item.querySelector("h4").textContent.toLowerCase(); // Use h4 for product name
+          if (name.includes(searchInput)) {
+            item.style.display = "block";  // Show the item if it matches the search
+            found = true;  // If an item matches, we need to show the section
+          } else {
+            item.style.display = "none";  // Hide the item if it doesn't match the search
+          }
+        });
+        // If any item was found, show the section; otherwise, hide it
+        section.style.display = found ? "block" : "none";
+      });
+    }
+  </script>
+
+</body>
+</html>

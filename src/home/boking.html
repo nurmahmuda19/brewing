@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Tempat - Coffee Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Header -->
+  <header class="relative bg-cover bg-center text-white shadow-md py-12" style="background-image: url('https://i.pinimg.com/736x/da/77/87/da7787a98a3d569869133782327dbd6d.jpg')">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="relative z-10 container mx-auto flex justify-between items-center px-6">
+      <div class="text-2xl font-bold cursor-pointer" id="logo">Brewing Bliss</div>
+      <nav class="hidden md:flex space-x-6">
+        <a href="home.html" class="hover:text-gray-200">Home</a>
+        <a href="rekomendasi.html" class="hover:text-gray-200">Coffee Shop</a>
+        <a href="#About" class="hover:text-gray-200">About</a>
+        <a href="#Help" class="hover:text-gray-200">Help</a>
+      </nav>
+      <button id="menuButton" class="md:hidden hover:text-gray-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+    <div class="relative z-10 text-center mt-6">
+      <h1 class="text-4xl md:text-5xl font-bold">Dibuat dengan Sempurna</h1>
+      <p class="text-lg md:text-xl mt-2">Dari pemenang rasa terbaik hingga favorit para ahli, kami memiliki kopi yang tepat untuk Anda.</p>
+    </div>
+  </header>
+  </header>
+
+    <main class="max-w-lg mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-center text-brown-800">Booking Tempat</h2>
+        <form id="bookingForm" class="mt-6 space-y-4">
+            <div>
+                <label for="name" class="block font-semibold">Nama:</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" class="w-full mt-1 p-2 border rounded focus:outline-none focus:ring focus:ring-brown-300" required>
+            </div>
+
+            <div>
+                <label for="email" class="block font-semibold">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan email Anda" class="w-full mt-1 p-2 border rounded focus:outline-none focus:ring focus:ring-brown-300" required>
+            </div>
+
+            <div>
+                <label for="phone" class="block font-semibold">No. Telepon:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Masukkan no. telepon Anda" class="w-full mt-1 p-2 border rounded focus:outline-none focus:ring focus:ring-brown-300" required>
+            </div>
+
+            <div>
+                <label for="date" class="block font-semibold">Tanggal:</label>
+                <input type="date" id="date" name="date" class="w-full mt-1 p-2 border rounded focus:outline-none focus:ring focus:ring-brown-300" required>
+            </div>
+
+            <div>
+                <label for="time" class="block font-semibold">Jam:</label>
+                <input type="time" id="time" name="time" class="w-full mt-1 p-2 border rounded focus:outline-none focus:ring focus:ring-brown-300" required>
+            </div>
+
+            <div>
+                <label for="guests" class="block font-semibold">Jumlah Orang:</label>
+                <input type="number" id="guests" name="guests" min="1" placeholder="Masukkan jumlah tamu" class="w-full mt-1 p-2 border rounded focus:outline-none focus:ring focus:ring-brown-300" required>
+            </div>
+
+            <div>
+                <label for="requests" class="block font-semibold">Permintaan Khusus:</label>
+                <textarea id="requests" name="requests" rows="4" placeholder="Tuliskan permintaan khusus" class="w-full mt-1 p-2 border rounded focus:outline-none focus:ring focus:ring-brown-300"></textarea>
+            </div>
+
+            <div>
+                <label for="menu" class="block font-semibold">Pilih Menu:</label>
+                <select id="menu" name="menu" class="w-full mt-1 p-2 border rounded focus:outline-none focus:ring focus:ring-brown-300">
+                    <option value="#" selected disabled>Pilih menu favorit Anda</option>
+                    <option value="kii.html">Pilih menu</option>
+                    <option value="">Pilih menu di lokasi</option>
+                </select>
+            </div>
+
+            <button type="button" id="bookingButton" class="w-full py-2 bg-blue-800 text-white font-bold rounded hover:bg-blue-700">Booking</button>
+        </form>
+
+        <div id="successMessage" class="hidden mt-6 text-center">
+            <h3 class="text-xl font-bold text-green-600">Booking Berhasil!</h3>
+            <p class="mt-2">Tunjukkan QR Code berikut untuk pembayaran:</p>
+            <div class="mt-4">
+                <img id="qrCode" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Payment" alt="QR Code Pembayaran" class="mx-auto">
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-4 bg-brown-800 text-white mt-10">
+        <p>&copy; 2024 Coffee Shop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('bookingButton').addEventListener('click', function() {
+            document.getElementById('bookingForm').classList.add('hidden');
+            document.getElementById('successMessage').classList.remove('hidden');
+        });
+
+        document.getElementById('menu').addEventListener('change', function(event) {
+            if (event.target.value === 'kii.html') {
+                window.location.href = 'kii.html';
+            }
+        });
+    </script>
+</body>
+</html>

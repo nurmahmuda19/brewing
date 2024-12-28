@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minuman - Brewing Bliss</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header style="background-color: #8B4513;" class="text-white shadow-md">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <!-- Logo -->
+      <div class="text-2xl font-bold cursor-pointer" id="logo">Brewing Bliss</div>
+
+      <!-- Navigation -->
+      <nav class="space-x-6 flex items-center">
+        <a href="homi.html" class="hover:text-gray-200">Home</a>
+        <a href="menu.html" class="hover:text-gray-200">Menu</a>
+        <a href="rekomendasi.html" class="hover:text-gray-200">Coffee Shop</a>
+        <a href="#About" class="hover:text-gray-200">About</a>
+        <a href="#Help" class="hover:text-gray-200">Help</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Search Bar -->
+  <div class="container mx-auto mt-6 px-6">
+    <div class="relative bg-white border rounded-lg p-4">
+      <input type="text" id="searchBar" placeholder="Search Menu" 
+      class="w-full border-none outline-none text-lg p-2" oninput="filterMenu()">
+    </div>
+  </div>
+  <!-- Minuman Section -->
+  <main class="container mx-auto mt-10 px-6">
+    <h1 class="text-3xl font-bold mb-6">Minuman</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Espresso -->
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-name="espresso">
+        <img src="espresso.jpg" alt="Espresso" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Espresso</h4>
+        <p class="text-gray-600">Rp 15.000</p>
+      </div>
+      <!-- Latte -->
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-name="latte">
+        <img src="latte.jpg" alt="Latte" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Latte</h4>
+        <p class="text-gray-600">Rp 25.000</p>
+      </div>
+      <!-- Matcha -->
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-name="matcha">
+        <img src="matcha.jpg" alt="Matcha" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Matcha</h4>
+        <p class="text-gray-600">Rp 20.000</p>
+      </div>
+      <!-- Dalgona Coffee -->
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-name="dalgona coffee">
+        <img src="Dalgona coffee ☕️ aesthetics.jpg" alt="Matcha" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Dalgona Coffee</h4>
+        <p class="text-gray-600">Rp 25.000</p>
+      </div>
+      <!-- Thai Tea -->
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-name="thai tea">
+        <img src="tai.jpg" alt="Matcha" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Thai Tea</h4>
+        <p class="text-gray-600">Rp 10.000</p>
+      </div>
+      <!-- Taro -->
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-name="ice taro">
+        <img src="taro.jpg" alt="Matcha" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg"> Ice Taro</h4>
+        <p class="text-gray-600">Rp 10.000</p>
+      </div>
+      <!-- Milk Tea -->
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-name="milk tea">
+        <img src="milk.jpg" alt="Matcha" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg"> Milk Tea</h4>
+        <p class="text-gray-600">Rp 10.000</p>
+      </div>
+      <!-- Red Velvet -->
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-name="ice red velvet">
+        <img src="red.jpg" alt="Matcha" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg"> Ice Red Velvet</h4>
+        <p class="text-gray-600">Rp 10.000</p>
+      </div>
+      <!-- Milkshake Oreo -->
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-name="milkshake oreo">
+        <img src="milkshake oreo.jpg" alt="milkshake oreo" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Milkshake Oreo</h4>
+        <p class="text-gray-600">Rp 15.000</p>
+      </div>
+      <!-- Milkshake Strawberry -->
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-name="milkshake strawberry">
+        <img src="milkshake strawberry.jpg" alt="milkshake strawberry" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Milkshake Strawberry</h4>
+        <p class="text-gray-600">Rp 15.000</p>
+      </div>
+      <!-- Milkshake Matcha -->
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-name="milkshake matcha">
+        <img src="milkshake matcha.jpg" alt="milkshake matcha" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Milkshake Matcha</h4>
+        <p class="text-gray-600">Rp 15.000</p>
+      </div>
+      <!-- Cookies Milkshake -->
+      <div class="bg-white shadow rounded-lg p-4 text-center menu-item" data-name="milkshake chocolate">
+        <img src="cookies milkshake.jpg" alt="milkshake chocolate" class="w-36 h-36 mx-auto rounded-lg mb-4">
+        <h4 class="font-bold text-lg">Milkshake Chocolate</h4>
+        <p class="text-gray-600">Rp 15.000</p>
+      </div>
+      <!-- Repeat for more items if necessary -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background-color: #8B4513;" class="text-white shadow-md mt-16">
+    <div class="container mx-auto py-4 text-center">
+      ©️ 2024 Brewing Bliss
+    </div>
+  </footer>
+
+</body>
+
+</html>

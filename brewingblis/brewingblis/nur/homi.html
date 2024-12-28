@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brewing Bliss</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header style="background-color: #8B4513;" class="text-white shadow-md">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <!-- Logo -->
+      <div class="text-2xl font-bold cursor-pointer" id="logo">Brewing Bliss</div>
+
+      <!-- Navigation -->
+      <nav class="space-x-6 flex items-center">
+        <a href="homi.html" class="hover:text-gray-200">Home</a>
+        <a href="menu.html" class="hover:text-gray-200">Menu</a>
+        <a href="rekomendasi.html" class="hover:text-gray-200">Coffee Shop</a>
+        <a href="#About" class="hover:text-gray-200">About</a>
+        <a href="#Help" class="hover:text-gray-200">Help</a>
+
+        <!-- Notification Icon -->
+        <button class="relative hover:text-gray-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V4a2 2 0 10-4 0v1.341C8.67 6.165 8 7.388 8 9v5.158c0 .538-.214 1.055-.595 1.437L6 17h9z" />
+          </svg>
+        </button>
+
+        <!-- Profile Icon -->
+        <button class="relative hover:text-gray-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M5.121 17.804A11.967 11.967 0 0112 15c2.486 0 4.788.92 6.879 2.457M12 3a4 4 0 110 8 4 4 0 010-8z" />
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Search Bar -->
+  <div class="container mx-auto mt-6 px-6">
+    <div class="relative bg-white border rounded-lg p-4">
+      <input type="text" id="searchBar" placeholder="Search Coffee Shop"
+        class="w-full border-none outline-none text-lg p-2" oninput="filterCoffeeShops()">
+    </div>
+  </div>
+
+  <!-- Menu Section -->
+  <main class="container mx-auto mt-10 px-6 space-y-16 mb-12"> <!-- Added mb-12 for extra bottom margin -->
+
+  <!-- Rekomendasi -->
+    <section id="Rekomendasi" class="container mx-auto mt-10 px-6">
+      <h2 class="text-2xl font-semibold mb-4">Rekomendasi</h2>
+      <h1 class="text-right text-xl mb-4"><a href="rekomendasi.html" class="text-blue-600 hover:underline">View all</a></h1>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white shadow rounded-lg p-4 text-center transition hover:shadow-lg hover:bg-blue-100" data-name="Cafe Serene">
+          <img src="/BrewingBliss/assetsnur/starbuck.jpeg" alt="Cafe Serene" class="w-36 h-36 mx-auto rounded-lg mb-4">
+          <h3 class="text-lg font-bold">Cafe Serene</h3>
+          <p class="text-gray-600">Menghadirkan ketenangan dan kenyamanan dalam suasana yang elegan.</p>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4 text-center transition hover:shadow-lg hover:bg-blue-100" data-name="Pastel Palette">
+          <img src="/BrewingBliss/assetsnur/coffeshop2.webp" alt="Pastel Palette" class="w-36 h-36 mx-auto rounded-lg mb-4">
+          <h3 class="text-lg font-bold">Pastel Palette</h3>
+          <p class="text-gray-600">Menyuguhkan suasana lembut dengan warna-warna pastel yang menenangkan.</p>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4 text-center transition hover:shadow-lg hover:bg-blue-100" data-name="Velvet & Vibes">
+          <img src="/BrewingBliss/assetsnur/coffeshop3.jpeg" alt="Velvet & Vibes" class="w-36 h-36 mx-auto rounded-lg mb-4">
+          <h3 class="text-lg font-bold">Velvet & Vibes</h3>
+          <p class="text-gray-600">Kombinasi kemewahan dan getaran positif untuk pengalaman ngopi yang istimewa.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coffee Shop List -->
+<section id="Terdekat" class="container mx-auto mt-10 px-6">
+  <h2 class="text-2xl font-semibold mb-4">Coffee Shop Terdekat</h2>
+  <!-- Perbarui tautan View All -->
+  <h1 class="text-right text-xl mb-4"><a href="rekomendasi.html" class="text-blue-600 hover:underline">View all</a></h1>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="bg-white shadow rounded-lg p-4 text-center transition hover:shadow-lg hover:bg-blue-100" data-name="Cikole Cafe">
+      <img src="/BrewingBliss/assetsnur/cikole.jpg" alt="Cikole Cafe" class="w-36 h-36 mx-auto rounded-lg mb-4">
+      <h3 class="text-lg font-bold">Cikole Cafe</h3>
+      <p class="text-gray-600">Jarak: 0.5 km</p>
+    </div>
+    <div class="bg-white shadow rounded-lg p-4 text-center transition hover:shadow-lg hover:bg-blue-100" data-name="Eighten Cafe">
+      <img src="/BrewingBliss/assetsnur/eighten.jpg" alt="Eighten Cafe" class="w-36 h-36 mx-auto rounded-lg mb-4">
+      <h3 class="text-lg font-bold">Eighten Cafe</h3>
+      <p class="text-gray-600">Jarak: 2 km</p>
+    </div>
+    <div class="bg-white shadow rounded-lg p-4 text-center transition hover:shadow-lg hover:bg-blue-100" data-name="Golden Cafe">
+      <img src="/BrewingBliss/assetsnur/golden.jpg" alt="Golden Cafe" class="w-36 h-36 mx-auto rounded-lg mb-4">
+      <h3 class="text-lg font-bold">Golden Cafe</h3>
+      <p class="text-gray-600">Jarak: 3 km</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer style="background-color: #8B4513;" class="text-white shadow-md">
+    <div class="container mx-auto py-4 text-center">
+      ©️ 2024 Brewing Bliss
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function filterCoffeeShops() {
+      const searchBar = document.getElementById('searchBar').value.toLowerCase();
+      const sections = document.querySelectorAll('#Rekomendasi, #Terdekat'); // Pilih semua section
+      let foundMatch = false; // Indikator apakah ada yang cocok
+
+      sections.forEach(section => {
+        const coffeeShops = section.querySelectorAll('.bg-white'); // Pilih coffee shop dalam section
+        let sectionHasMatch = false; // Indikator untuk section ini
+
+        coffeeShops.forEach(shop => {
+          const name = shop.getAttribute('data-name').toLowerCase();
+          if (name.includes(searchBar)) {
+            shop.style.display = "block"; // Tampilkan coffee shop yang cocok
+            sectionHasMatch = true; // Tandai bahwa section ini punya kecocokan
+            foundMatch = true; // Tandai bahwa ada kecocokan secara global
+          } else {
+            shop.style.display = "none"; // Sembunyikan yang tidak cocok
+          }
+        });
+
+    // Tampilkan atau sembunyikan seluruh section berdasarkan kecocokan
+    section.style.display = sectionHasMatch ? "block" : "none";
+  });
+
+  // Jika tidak ada kecocokan sama sekali, tampilkan pesan
+  if (!foundMatch) {
+    alert("Tidak ada coffee shop yang sesuai dengan kata kunci Anda.");
+  }
+}
+</script>
+
+</body>
+
+</html>

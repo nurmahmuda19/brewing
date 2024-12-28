@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brewing Bliss</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="text-[#052854]">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-10 bg-[#ACDEFF] py-4 shadow-md flex justify-between items-center text-white">
+        <div class="text-2xl font-semibold" id="logo">Brewing Bliss</div>
+        <nav class="space-x-6">
+            <a href="#Rekomendasi" class="text-[#052854] hover:text-[#003366]">Home</a>
+            <a href="#Produk" class="text-[#052854] hover:text-[#003366]">Menu</a>
+            <a href="#Promo" class="text-[#052854] hover:text-[#003366]">Promo</a>
+            <a href="#keranjang" class="text-[#052854] hover:text-[#003366]">Keranjang</a>
+        </nav>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="relative border border-[#ccc] rounded-lg p-4 mt-4">
+        <input type="text" placeholder="Search Coffee Shop" class="w-full p-2 text-lg focus:outline-none border-none">
+        <i class="fa fa-search absolute top-3 right-3"></i>
+    </div>
+
+    <!-- Produk Terbaru Section -->
+    <section id="Rekomendasi" class="py-8">
+        <h2 class="text-center text-2xl mb-4">Rekomendasi</h2>
+        <h1 class="text-right text-xl mb-4"><a href="#Rekomendasi">View all</a></h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
+            <div class="bg-[#f0f0f0] rounded-lg p-4 text-center">
+                <img src="/BrewingBliss/assetsnur/starbuck.jpeg" alt="Tutup pukul 22.00" class="w-36 h-36 mb-4 rounded-lg mx-auto">
+                <h3 class="text-[#003366] text-xl font-semibold">Café Serene</h3>
+                <p class="text-gray-600">Menghadirkan ketenangan dan kenyamanan dalam suasana yang elegan.</p>
+            </div>
+            <div class="bg-[#f0f0f0] rounded-lg p-4 text-center">
+                <img src="/BrewingBliss/assetsnur/coffeshop2.webp" alt="Tutup pukul 23.00" class="w-36 h-36 mb-4 rounded-lg mx-auto">
+                <h3 class="text-[#003366] text-xl font-semibold">Pastel Palette</h3>
+                <p class="text-gray-600">Menyuguhkan suasana lembut dengan warna-warna pastel yang menenangkan.</p>
+            </div>
+            <div class="bg-[#f0f0f0] rounded-lg p-4 text-center">
+                <img src="/BrewingBliss/assetsnur/coffeshop3.jpeg" alt="Tutup pukul 22.00" class="w-36 h-36 mb-4 rounded-lg mx-auto">
+                <h3 class="text-[#003366] text-xl font-semibold">Velvet & Vibes</h3>
+                <p class="text-gray-600">Kombinasi kemewahan dan getaran positif untuk pengalaman ngopi yang istimewa.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Section -->
+    <section id="Promo" class="py-8">
+        <h2 class="text-center text-2xl mb-4">Diskon dan Promo</h2>
+        <h1 class="text-right text-xl mb-4"><a href="#Promo">View all</a></h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
+            <div class="bg-[#f0f0f0] rounded-lg p-4 text-center">
+                <img src="/BrewingBliss/assetsnur/coffeshop4.jpeg" alt="Tutup pukul 22.00" class="w-36 h-36 mb-4 rounded-lg mx-auto">
+                <h3 class="text-[#003366] text-xl font-semibold">Starbucks</h3>
+                <p class="text-gray-600">Berbagai kopi dan non kopi</p>
+            </div>
+            <div class="bg-[#f0f0f0] rounded-lg p-4 text-center">
+                <img src="/BrewingBliss/assetsnur/coffeshop5.png" alt="Tutup pukul 00.00" class="w-36 h-36 mb-4 rounded-lg mx-auto">
+                <h3 class="text-[#003366] text-xl font-semibold">Janji Jiwa</h3>
+                <p class="text-gray-600">Berbagai kopi dan non kopi.</p>
+            </div>
+            <div class="bg-[#f0f0f0] rounded-lg p-4 text-center">
+                <img src="/BrewingBliss/assetsnur/coffeshop6.webp" alt="Tutup pukul 23.00" class="w-36 h-36 mb-4 rounded-lg mx-auto">
+                <h3 class="text-[#003366] text-xl font-semibold">Kenangan Mantan</h3>
+                <p class="text-gray-600">Berbagai kopi dan non kopi.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produk Promo Section -->
+    <section id="Produk" class="py-8">
+        <h2 class="text-center text-2xl mb-4">Produk Promo</h2>
+        <h1 class="text-right text-xl mb-4"><a href="#Produk">View all</a></h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
+            <div class="bg-[#E6E6E6] rounded-lg text-center p-4">
+                <img src="/BrewingBliss/assetsnur/kopi1.jpeg" alt="Produk 1" class="w-36 h-36 mb-4 rounded-lg mx-auto">
+                <div class="font-semibold">Produk 1</div>
+                <div class="text-gray-600">Rp100.000</div>
+            </div>
+            <div class="bg-[#E6E6E6] rounded-lg text-center p-4">
+                <img src="/BrewingBliss/assetsnur/kopi2.jpeg" alt="Produk 2" class="w-36 h-36 mb-4 rounded-lg mx-auto">
+                <div class="font-semibold">Produk 2</div>
+                <div class="text-gray-600">Rp70.000</div>
+            </div>
+            <div class="bg-[#E6E6E6] rounded-lg text-center p-4">
+                <img src="/BrewingBliss/assetsnur/kopi3.jpeg" alt="Produk 3" class="w-36 h-36 mb-4 rounded-lg mx-auto">
+                <div class="font-semibold">Produk 3</div>
+                <div class="text-gray-600">Rp80.000</div>
+            </div>
+            <div class="bg-[#E6E6E6] rounded-lg text-center p-4">
+                <img src="/BrewingBliss/assetsnur/kopi4.jpeg" alt="Produk 4" class="w-36 h-36 mb-4 rounded-lg mx-auto">
+                <div class="font-semibold">Produk 4</div>
+                <div class="text-gray-600">Rp50.000</div>
+            </div>
+            <div class="bg-[#E6E6E6] rounded-lg text-center p-4">
+                <img src="/BrewingBliss/assetsnur/kopi6.webp" alt="Produk 5" class="w-36 h-36 mb-4 rounded-lg mx-auto">
+                <div class="font-semibold">Produk 5</div>
+                <div class="text-gray-600">Rp10.000</div>
+            </div>
+            <div class="bg-[#E6E6E6] rounded-lg text-center p-4">
+                <img src="/BrewingBliss/assetsnur/kopi5.webp" alt="Produk 6" class="w-36 h-36 mb-4 rounded-lg mx-auto">
+                <div

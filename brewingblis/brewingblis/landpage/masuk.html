@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+
+    <!-- Form login -->
+    <div class="w-full sm:w-2/3 lg:w-1/3 bg-[#622a07] p-16 rounded-lg shadow-md relative">
+        <!-- Back Button inside the box -->
+        <a href="/BrewingBliss/landpage/landingpage.html" 
+           class="absolute top-4 left-4 text-3xl text-white px-6 py-4 rounded-lg">
+           ←
+        </a>
+        <br>
+        <h2 class="text-2xl font-bold mb-6 text-white">Masuk</h2>
+        <form id="loginForm">
+            <div class="mb-4">
+                <label class="block text-gray-200 text-[#c09474] font-bold mb-2" for="email">
+                    Email Address
+                </label>
+                <input
+                    class="shadow appearance-none border border-[#c09474] bg-[#f3e0c3] rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="email" type="email" placeholder="Masukkan email" required>
+            </div>
+            <div class="mb-8">
+                <label class="block text-gray-200 text-[#c09474] text-sm font-bold mb-2" for="password">
+                    Password
+                </label>
+                <input
+                    class="shadow appearance-none border border-[#c09474] bg-[#f3e0c3] rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                    id="password" type="password" placeholder="Masukkan password" required>
+                <p id="error-message" class="text-red-500 text-xs italic hidden">Email dan Password harus diisi.</p>
+                <a href="/BrewingBliss/landpage/kodeverifikasi.html" class="inline-block align-baseline text-sm text-white hover:text-gray-800">
+                    Lupa password
+                </a>
+            </div>
+            <div class="mb-0 flex justify-center">
+                <button
+                    class="bg-[#c09474] text-white font-bold py-3 px-6 rounded-lg shadow-outline focus:outline-none focus:shadow-outline hover:shadow-xl"
+                    type="submit">
+                    Masuk
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const errorMessage = document.getElementById('error-message');
+
+            // Reset error pesan
+            errorMessage.classList.add('hidden');
+
+            // cek form terisi
+            if (!email || !password) {
+                errorMessage.classList.remove('hidden');
+                return;
+            }
+
+            // brhasil, masuk
+            alert('Login berhasil!');
+            window.location.href = '/BrewingBliss/homepage/BrewingBliss.html';
+        });
+    </script>
+
+</body>
+
+</html>

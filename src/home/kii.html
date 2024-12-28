@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-white to-[#5F2602] font-sans">
+<!-- Header -->
+<header class="relative bg-cover bg-center text-white shadow-md py-12 z-10" style="background-image: url('https://i.pinimg.com/736x/da/77/87/da7787a98a3d569869133782327dbd6d.jpg')">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="relative z-10 container mx-auto flex justify-between items-center px-6">
+      <div class="text-2xl font-bold cursor-pointer" id="logo">Brewing Bliss</div>
+      <nav class="hidden md:flex space-x-6">
+        <a href="home.html" class="hover:text-gray-200">Home</a>
+        <a href="rekomendasi.html" class="hover:text-gray-200">Coffee Shop</a>
+        <a href="#About" class="hover:text-gray-200">About</a>
+        <a href="#Help" class="hover:text-gray-200">Help</a>
+      </nav>
+      <button id="menuButton" class="md:hidden hover:text-gray-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+    <div class="relative z-10 text-center mt-6">
+      <h1 class="text-4xl md:text-5xl font-bold">Dibuat dengan Sempurna</h1>
+      <p class="text-lg md:text-xl mt-2">Dari pemenang rasa terbaik hingga favorit para ahli, kami menyajikan hidangan dan minuman yang tepat untuk Anda.</p>
+    </div>
+  </header>
+  </header>
+
+    <div class="text-center my-4 text-black text-lg">
+        TYPE OF SERVICES AVAILABLE : <span class="text-white font-bold">Pick-up</span>, <span class="text-red-700 font-bold">Delivery</span>, <span class="text-yellow-500 font-bold">Coffee Catering</span>
+    </div>
+
+    <div class="flex">
+        <!-- Sidebar for Categories -->
+        <aside class="w-1/4 bg-gray-100 p-4 hidden md:block" style="background-image: url('bii.jpg'); background-size: cover; background-position: center;">
+            <div class="bg-gray-900 bg-opacity-70 p-4 rounded">
+                <h2 class="text-lg font-bold text-white mb-4">Categories</h2>
+                <ul class="space-y-2">
+                    <li><button class="text-left w-full text-gray-300 hover:text-green-400" onclick="filterMenu('all')">All</button></li>
+                    <li><button class="text-left w-full text-gray-300 hover:text-green-400" onclick="filterMenu('food')">Food</button></li>
+                    <li><button class="text-left w-full text-gray-300 hover:text-green-400" onclick="filterMenu('drinks', true)">Drinks</button></li>
+                    <li><button class="text-left w-full text-gray-300 hover:text-green-400" onclick="filterMenu('snacks')">Snacks</button></li>
+                </ul>
+                <div id="subcategories" class="mt-4 hidden">
+                    <h3 class="text-md font-bold text-white mb-2">Drinks Subcategories</h3>
+                    <ul class="space-y-2">
+                        <li><button class="text-left w-full text-gray-300 hover:text-green-700" onclick="filterMenu('coffee')">Coffee</button></li>
+                        <li><button class="text-left w-full text-gray-300 hover:text-green-700" onclick="filterMenu('non-coffee')">Non-Coffee</button></li>
+                        <li><button class="text-left w-full text-gray-300 hover:text-green-700" onclick="filterMenu('milkshake')">Milkshake</button></li>
+                        <li><button class="text-left w-full text-gray-300 hover:text-green-700" onclick="filterMenu('juice')">Juice</button></li>
+                        <li><button class="text-left w-full text-gray-300 hover:text-green-700" onclick="filterMenu('jamu')">Herbal Drinks</button></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Menu Section -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 py-6 w-full md:w-3/4">
+            <!-- Food Items -->
+            <div class="menu-item food text-center border border-gray-200 rounded-lg shadow-sm bg-white p-4 hover:scale-105 transition-transform cursor-pointer" onclick="openModal('Nasi Goreng', 'Rp 25.000', 'Nasi goreng spesial dengan ayam dan telur.', 'nasgor.jpeg')">
+                <img src="nasgor.jpeg" alt="Nasi Goreng" class="w-full h-auto rounded-md">
+                <h3 class="text-lg font-semibold text-gray-800 mt-4">Nasi Goreng</h3>
+                <p class="text-gray-600">Rp 25.000</p>
+                <p class="text-sm text-gray-500 mt-2">Nasi goreng spesial dengan ayam dan telur.</p>
+            </div>
+
+            <div class="menu-item food text-center border border-gray-200 rounded-lg shadow-sm bg-white p-4 hover:scale-105 transition-transform cursor-pointer" onclick="openModal('Mie Goreng', 'Rp 22.000', 'Mie goreng lezat dengan bumbu spesial.', 'migor.jpeg')">
+                <img src="migor.jpeg" alt="Mie Goreng" class="w-full h-auto rounded-md">
+                <h3 class="text-lg font-semibold text-gray-800 mt-4">Mie Goreng</h3>
+                <p class="text-gray-600">Rp 22.000</p>
+                <p class="text-sm text-gray-500 mt-2">Mie goreng lezat dengan bumbu spesial.</p>
+            </div>
+
+            <div class="menu-item food text-center border border-gray-200 rounded-lg shadow-sm bg-white p-4 hover:scale-105 transition-transform cursor-pointer" onclick="openModal('Beef Steak', 'Rp 45.000', 'Steak yang dibuat dari beef premium dan berkualitas namun harga tetap merakyat.', 'beef.jpeg')">
+                <img src="beef.jpeg" alt="Nasi Goreng" class="w-full h-auto rounded-md">
+                <h3 class="text-lg font-semibold text-gray-800 mt-4">Beef Steak</h3>
+                <p class="text-gray-600">Rp 45.000</p>
+                <p class="text-sm text-gray-500 mt-2">Steak yang dibuat dari beef premium dan berkualitas namun harga tetap merakyat.</p>
+            </div>
+
+            <div class="menu-item food text-center border border-gray-200 rounded-lg shadow-sm bg-white p-4 hover:scale-105 transition-transform cursor-pointer" onclick="openModal('Chicken Steak', 'Rp 40.000', 'Steak ayam dengan bumbu khas dan aroma rempah yang menggugah selera.', 'pitik.jpeg')">
+                <img src="pitik.jpeg" alt="Mie Goreng" class="w-full h-auto rounded-md">
+                <h3 class="text-lg font-semibold text-gray-800 mt-4">Chicken Steak</h3>
+                <p class="text-gray-600">Rp 40.000</p>
+                <p class="text-sm text-gray-500 mt-2">Steak ayam dengan bumbu khas dan aroma rempah yang menggugah selera.</p>
+            </div>
+
+            <div class="menu-item food text-center border border-gray-200 rounded-lg shadow-sm bg-white p-4 hover:scale-105 transition-transform cursor-pointer" onclick="openModal('Nasi Ayam Geprek', 'Rp 25.000', 'Nasi ayam geprek dengan sambal pedas yang menggoyangkan lidah.', 'Ayam geprek.jpeg')">
+                <img src="Ayam geprek.jpeg" alt="Nasi Goreng" class="w-full h-auto rounded-md">
+                <h3 class="text-lg font-semibold text-gray-800 mt-4">Nasi Ayam Geprek</h3>
+                <p class="text-gray-600">Rp 25.000</p>
+                <p class="text-sm text-gray-500 mt-2">Nasi ayam geprek dengan sambal pedas yang menggoyangkan lidah.</p>
+            </div>
+
+            <div class="menu-item food text-center border border-gray-200 rounded-lg shadow-sm bg-white p-4 hover:scale-105 transition-transform cursor-pointer" onclick="openModal('Rice Bowl Chicken Teriyaki', 'Rp 28.000', 'Nasi pulen dengan ayam empuk, dibalut saus teriyaki manis gurih, ditambah taburan wijen dan daun bawang segar.', 'rice.jpeg')">
+                <img src="rice.jpeg" alt="Mie Goreng" class="w-full h-auto rounded-md">
+                <h3 class="text-lg font-semibold text-gray-800 mt-4">Rice Bowl Chicken Teriyaki</h3>
+                <p class="text-gray-600">Rp 28.000</p>
+                <p class="text-sm text-gray-500 mt-2">Nasi pulen dengan ayam empuk, dibalut saus teriyaki manis gurih, ditambah taburan wijen dan daun bawang segar.</p>
+            </div>
+
+            <div class="menu-item food text-center border border-gray-200 rounded-lg shadow-sm bg-white p-4 hover:scale-105 transition-transform cursor-pointer" onclick="openModal('Cumi Saos Asam Manis', 'Rp 45.000', 'Potongan cumi segar yang dimasak sempurna dengan saus asam manis khas, perpaduan rasa segar, manis, dan sedikit pedas.', 'cumi.jpeg')">
+                <img src="cumi.jpeg" alt="Nasi Goreng" class="w-full h-auto rounded-md">
+                <h3 class="text-lg font-semibold text-gray-800 mt-4">Cumi Saos Asam Manis</h3>
+                <p class="text-gray-600">Rp 45.000</p>
+                <p class="text-sm text-gray-500 mt-2">Potongan cumi segar yang dimasak sempurna dengan saus asam manis khas, perpaduan rasa segar, manis, dan sedikit pedas.</p>
+            </div>
+
+            <div class="menu-item food text-center border border-gray-200 rounded-lg shadow-sm bg-white p-4 hover:scale-105 transition-transform cursor-pointer" onclick="openModal('Indomie Bangladesh', 'Rp 15.000', 'Indomie Bangladesh mie instan rasa gurih dan kaya akan rempah.', 'indomie.jpeg')">
+                <img src="indomie.jpeg" alt="Indomie Bangladesh" class="w-full h-auto rounded-md">
+                <h3 class="text-lg font-semibold text-gray-800 mt-4">Indomie Bangladesh</h3>
+                <p class="text-gray-600">Rp 15.000</p>
+                <p class="text-sm text-gray-500 mt-2">Indomie Bangladesh mie instan rasa gurih dan kaya akan rempah.</p>
+            </div>            
+
+            <!-- Drinks Items -->
+            <div class="menu-item drinks coffee text-center border border-gray-200 rounded-lg shadow-sm bg-white p-4 hover:scale-105 transition-transform cursor-pointer" onclick="openModal('Iced Latte', 'Rp 28.000', 'Espresso dengan susu segar dan es.', 'late.jpg')">
+                <img src="late.jpg" alt="Iced Latte" class="w-full h-auto rounded-md">
+                <h3 class="text-lg font-semibold text-gray-800 mt-4">Iced Latte</h3>
+                <p class="text-gray-600">Rp 28.000</p>
+                <p class="text-sm text-gray-500 mt-2">Espresso dengan susu segar dan es.</p>
+            </div>
+
+            <div class="menu-item drinks non-coffee text-center border border-gray-200 rounded-lg shadow-sm bg-white p-4 hover:scale-105 transition-transform cursor-pointer" onclick="openModal('Lemon Tea', 'Rp 8.000', 'Teh segar dengan perasan lemon.',  'lemon.jpeg')">
+                <img src="lemon.jpeg" alt="Lemon Tea" class="w-full h-auto rounded-md">
+                <h3 class="text-lg font-semibold text-gray-800 mt-4">Lemon Tea</h3>
+                <p class="text-gray-600">Rp 8.000</p>
+                <p class="text-sm text-gray-500 mt-2">Teh segar dengan perasan lemon.</p>
+            </div>
+
+            <div class="menu-item drinks non-coffee text-center border border-gray-200 rounded-lg shadow-sm bg-white p-4 hover:scale-105 transition-transform cursor-pointer" onclick="openModal('Jasmine Tea', 'Rp 8.000', 'Teh segar dengan campuran ekstraksi bunga melati.',  'teh.jpeg')">
+                <img src="teh.jpeg" alt="Lemon Tea" class="w-full h-auto rounded-md">
+                <h3 class="text-lg font-semibold text-gray-800 mt-4">Jasmine Tea</h3>
+                <p class="text-gray-600">Rp 8.000</p>
+                <p class="text-sm text-gray-500 mt-2">Teh segar dengan campuran ekstraksi bunga melati.</p>
+            </div>
+
+            <div class="menu-item drinks non-coffee text-center border border-gray-200 rounded-lg shadow-sm bg-white p-4 hover:scale-105 transition-transform cursor-pointer" onclick="openModal('Green Tea', 'Rp 8.000', 'Teh segar yang murni dari daun teh hijau pilihan.',  'green.jpg')">
+                <img src="green.jpg" alt="Lemon Tea" class="w-full h-auto rounded-md">
+                <h3 class="text-lg font-semibold text-gray-800 mt-4">Green Tea</h3>
+                <p class="text-gray-600">Rp 8.000</p>
+                <p class="text-sm text-gray-500 mt-2">Teh segar yang murni dari dauh teh hijau pilihan.</p>
+            </div>
+
+            <div class="menu-item drinks milkshake text-center border border-gray-200 rounded-lg shadow-sm bg-white p-4 hover:scale-105 transition-transform cursor-pointer" onclick="openModal('Chocolate Milkshake', 'Rp 15.000', 'Milkshake cokelat creamy dan lezat.',  'coklat.jpeg')">
+                <img src="coklat.jpeg" alt="Chocolate Milkshake" class="w-full h-auto rounded-md">
+                <h3 class="text-lg font-semibold text-gray-800 mt-4">Chocolate Milkshake</h3>
+                <p class="text-gray-600">Rp 15.000</p>
+                <p class="text-sm text-gray-500 mt-2">Milkshake cokelat creamy dan lezat.</p>
+            </div>
+
+            <div class="menu-item drinks milkshake text-center border border-gray-200 rounded-lg shadow-sm bg-white p-4 hover:scale-105 transition-transform cursor-pointer" onclick="openModal('Strawberry Milkshake', 'Rp 15.000', 'Milkshake Strawberry creamy dan lezat.',  'str.jpeg')">
+                <img src="str.jpeg" alt="Strawberry Milkshake" class="w-full h-auto rounded-md">
+                <h3 class="text-lg font-semibold text-gray-800 mt-4">Strawberry Milkshake</h3>
+                <p class="text-gray-600">Rp 15.000</p>
+                <p class="text-sm text-gray-500 mt-2">Milkshake Strawberry creamy dan lezat.</p>
+            </div>
+
+            <div class="menu-item drinks juice text-center border border-gray-200 rounded-lg shadow-sm bg-white p-4 hover:scale-105 transition-transform cursor-pointer" onclick="openModal('Orange Juice', 'Rp 10.000', 'Jus jeruk dengan rasa asam manis cocok diminum untuk menghilangkan dahaga.',  'jeruk.jpeg')">
+                <img src="jeruk.jpeg" alt="Chocolate Milkshake" class="w-full h-auto rounded-md">
+                <h3 class="text-lg font-semibold text-gray-800 mt-4">Orange Juice</h3>
+                <p class="text-gray-600">Rp 10.000</p>
+                <p class="text-sm text-gray-500 mt-2">Jus jeruk dengan rasa asam manis cocok diminum untuk menghilangkan dahaga.</p>
+            </div>
+
+            <div class="menu-item drinks jamu text-center border border-gray-200 rounded-lg shadow-sm bg-white p-4 hover:scale-105 transition-transform cursor-pointer" onclick="openModal('Beras Kencur', 'Rp 10.000', 'Minuman herbal dari perpaduan air beras ketan dan kencur.',  'beras.jpeg')">
+                <img src="beras.jpeg" alt="Chocolate Milkshake" class="w-full h-auto rounded-md">
+                <h3 class="text-lg font-semibold text-gray-800 mt-4">Beras Kencur</h3>
+                <p class="text-gray-600">Rp 10.000</p>
+                <p class="text-sm text-gray-500 mt-2">Minuman herbal dari perpaduan air beras ketan dan kencur.</p>
+            </div>
+
+            <div class="menu-item drinks jamu text-center border border-gray-200 rounded-lg shadow-sm bg-white p-4 hover:scale-105 transition-transform cursor-pointer" onclick="openModal('Kunyit Asem', 'Rp 10.000', 'Minuman herbal dari campuran rebusan kunyit dan asam jawa.',  'kunir.jpeg')">
+                <img src="kunir.jpeg" alt="Chocolate Milkshake" class="w-full h-auto rounded-md">
+                <h3 class="text-lg font-semibold text-gray-800 mt-4">Kunyit Asem</h3>
+                <p class="text-gray-600">Rp 10.000</p>
+                <p class="text-sm text-gray-500 mt-2">Minuman herbal dari campuran rebusan kunyit dan asam jawa.</p>
+            </div>
+
+            <!-- Snacks Items -->
+            <div class="menu-item snacks text-center border border-gray-200 rounded-lg shadow-sm bg-white p-4 hover:scale-105 transition-transform cursor-pointer" onclick="openModal('French Fries', 'Rp 15.000', 'Kentang goreng renyah dan gurih.',  'kentang.jpeg')">
+                <img src="kentang.jpeg" alt="French Fries" class="w-full h-auto rounded-md">
+                <h3 class="text-lg font-semibold text-gray-800 mt-4">French Fries</h3>
+                <p class="text-gray-600">Rp 15.000</p>
+                <p class="text-sm text-gray-500 mt-2">Kentang goreng renyah dan gurih.</p>
+            </div>
+
+            <div class="menu-item snacks text-center border border-gray-200 rounded-lg shadow-sm bg-white p-4 hover:scale-105 transition-transform cursor-pointer" onclick="openModal('Chicken Wings', 'Rp 32.000', 'Sayap ayam goreng crispy.',  'bbq.jpeg')">
+                <img src="bbq.jpeg" alt="Chicken Wings" class="w-full h-auto rounded-md">
+                <h3 class="text-lg font-semibold text-gray-800 mt-4">Chicken Wings</h3>
+                <p class="text-gray-600">Rp 32.000</p>
+                <p class="text-sm text-gray-500 mt-2">Sayap ayam goreng crispy.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal -->
+    <div id="menuModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white p-6 rounded-lg shadow-lg max-w-3xl w-full flex flex-col sm:flex-row relative">
+            <button class="absolute top-4 right-4 text-gray-600" onclick="closeModal()">&times;</button>
+            <img id="modalImage" src="" alt="Product Image" class="w-full sm:w-1/2 h-auto rounded-md mb-4 sm:mb-0 sm:mr-4">
+            <div class="flex flex-col justify-between">
+                <h2 id="modalTitle" class="text-2xl font-bold text-gray-800 mb-4"></h2>
+                <p id="modalPrice" class="text-lg text-green-600 mb-2"></p>
+                <p id="modalDescription" class="text-gray-600 mb-4"></p>
+                <p id="modalShop" class="text-sm text-gray-500 mb-6"></p>
+                <button class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition">Masukkan ke Keranjang</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(title, price, description, image) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalPrice').innerText = price;
+            document.getElementById('modalDescription').innerText = description;
+            document.getElementById('modalImage').src = image;
+            document.getElementById('menuModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('menuModal').classList.add('hidden');
+        }
+
+        function filterMenu(category, isDrinks = false) {
+            const items = document.querySelectorAll('.menu-item');
+            const subcategories = document.getElementById('subcategories');
+            if (isDrinks) {
+                subcategories.classList.remove('hidden');
+            } else {
+                subcategories.classList.add('hidden');
+            }
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
